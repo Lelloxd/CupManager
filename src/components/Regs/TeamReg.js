@@ -34,7 +34,7 @@ export default {
         },
         getTeams() {
             this.loading = true;
-            const url = Vue.config.env == 'production' ? Vue.config.ApiUrl + '/team/all' : 'http://www.mocky.io/v2/5c656ea7330000b212b99dc4?mocky-delay=1000ms';
+            const url = Vue.config.ApiUrl + '/team/all';
             axios.get(url).then(response => {
                 this.teams = response.data;
                 this.loading = false;

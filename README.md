@@ -1,6 +1,6 @@
 # cup-manager
 
-> A Vue.js project
+> A Vue.js project with Cordova
 
 ## Build Setup
 
@@ -8,8 +8,13 @@
 # install dependencies
 npm install
 
-# serve with hot reload at localhost:8080
+# serve with hot reload at localhost:8080 
+# POINTING AT http://localhost:29090
 npm run dev
+
+# serve with hot reload at localhost:8080
+# POINTING AT https://cup-manager.herokuapp.com
+npm run dev:remote
 
 # build for production with minification
 npm run build
