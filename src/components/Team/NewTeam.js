@@ -3,7 +3,7 @@ import axios from 'axios';
 import Vue from 'vue';
 
 export default {
-    name: 'team-reg',
+    name: 'newTeam',
     data() {
         return {
             isSubmitted: false,
@@ -11,13 +11,8 @@ export default {
             errorHeader: 'error.invalidFields',
             errors: [],
             submitting: false,
-            loading: true,
-            teams: this.getTeams(),
             form: {
-                name: '',
-                surname: '',
-                birthOfDay:'',
-                team: null
+                name: ''
             }
         }
     },
@@ -33,20 +28,12 @@ export default {
         enableSubmitLoader() {
             this.submitting = true;
         },
-        getTeams() {
-            this.loading = true;
-            const url = Vue.config.ApiUrl + '/team/all';
-            axios.get(url).then(response => {
-                this.teams = response.data;
-                this.loading = false;
-            })
-        },
         disableSubmitLoader() {
             this.submitting = false;
         },
         sendFormData() {
             this.enableSubmitLoader();
-            axios.post(Vue.config.ApiUrl + "/player", this.form).then(response => {
+            axios.post(Vue.config.ApiUrl + "/team", this.form).then(response => {
                 this.submitSuccess(response);
                 this.disableSubmitLoader();
             }).catch(error => {
@@ -116,16 +103,12 @@ export default {
             } catch (error) { return error; }
         },
         reload() {
-          this.isSubmitted = false;
-          this.form.name = this.form.surname = null;
+            window.location = '#/nuovo-team';
         }
     },
     validations: {
         form: {
-            name: { required },
-            surname: { required },
-            birthOfDay: {required},
-            team: {required},
+            name: { required }
         }
     },
     watch: {

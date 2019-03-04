@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="col-xs-12 col-sm-12 col-md-4 mx-auto">
     <form v-if="!isSubmitted && !loading" @submit.prevent="submit" novalidate>
       <div class="form-group">
         <label for="name">Nome *</label>
@@ -12,27 +12,22 @@
         <div v-if="isErrorField('surname')" class="invalid-feedback">Campo Cognome obbligatorio!</div>
       </div>
       <div class="form-group">
+        <label for="birthOfDay">Data di nascita *</label>
+        <input type="date" class="form-control" id="birthOfDay" v-model.lazy.trim="form.birthOfDay" @blur="onFieldBlur('birthOfDay')" v-bind:class="getFieldClasses('birthOfDay')">
+        <div v-if="isErrorField('birthOfDay')" class="invalid-feedback">Campo data di nascita obbligatorio!</div>
+      </div>
+      <div class="form-group">
         <label for="team">Team *</label>
         <select id="team" class="form-control" v-model="form.team" @blur="onFieldBlur('team')" v-bind:class="getFieldClasses('team')">
             <option v-for="team in teams" v-bind:key="team.id" v-bind:value="team">{{ team.name }}</option>
         </select>
         <div v-if="isErrorField('team')" class="invalid-feedback">Campo Team obbligatorio</div>
       </div>
-      <div class="alert alert-danger" v-if="isError">
-        <p class="mb-0">
-          <strong>error</strong>
-        </p>
-        <ul class="mb-0 pl-3" v-if="errors.length > 0">
-          <li v-for="error in errors" v-bind:key="error.field">
-            <span v-if="error.field">{{ 'Campo '+ error.field + ' obbligatorio' }}<span v-if="error.message">: {{ error.message }}</span></span>
-            <span v-else-if="error.message">{{ error.message }}</span>
-          </li>
-        </ul>
-      </div>
+
       <div class="form-group">
         <button type="submit" class="btn btn-primary" :disabled="submitting">
           <span v-if="submitting">submitting <img src="../../assets/loader.svg" /></span>
-          <span v-else>submit</span>
+          <span v-else>Salva</span>
         </button>
       </div>
     </form>
