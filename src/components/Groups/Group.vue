@@ -18,6 +18,9 @@
       <div class="alert alert-success">
         <span> Aggiunto gruppo <b>{{form.name}}</b></span>
       </div>
+      <p class="text-center">
+        <a href="#" class="btn btn-secondary" @click.prevent="reload()">Indietro</a>
+      </p>
     </div>
   </div>
 </template>

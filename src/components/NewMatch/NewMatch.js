@@ -41,6 +41,7 @@ export default {
           axios.post(Vue.config.ApiUrl + "/match", this.form).then(response => {
               this.submitSuccess(response);
               this.disableSubmitLoader();
+              this.$router.push({ name: 'all-matches' })
           }).catch(error => {
               this.submitError(error);
               this.disableSubmitLoader();

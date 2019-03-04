@@ -5,16 +5,27 @@
       <select v-model="team" @change="getTeam(team.id)">
         <option v-for="team in teams" v-bind:key="team.id" v-bind:value="team">{{ team.name }}</option>
       </select>
-      <a v-if="selected" v-b-modal.modal1 href="#" class="btn btn-warning" >Elimina Squadra</a>
+
       <b-modal id="modal1" hide-footer title="Elimina squadra">
-        <p class="my-4">Confermi di voler elimanare questa squadra {{team.name}}?</p>
+        <p class="my-4">Confermi di voler eliminare questa squadra {{team.name}}?</p>
         <a v-if="selected" v-b-modal.modal1 href="#" class="btn btn-warning" @click.prevent="remove()">Elimina</a>
       </b-modal>
       <div>
-          <b-table class="mt-3" striped hover :items="players" :fields="fields"/>
+        <b-table class="mt-3" striped hover :items="players" :fields="fields">
+          <template slot="action" slot-scope="data">
+            <a class="btn btn-danger btn-sm" v-b-modal.modalDelete @click="setPlayerId(data.item)">Elimina</a>
+          </template>
+        </b-table>
       </div>
     </div>
     <div class="loading" v-if="loading"><span>LOADING</span> <img src="../../assets/loader.svg" /></div>
+    <a v-if="selected" v-b-modal.modal1 href="#" class="btn btn-warning" >Elimina Squadra</a>
+    <!-- Elimina -->
+    <b-modal id="modalDelete" ref="modalDelete" hide-footer title="Elimina partita">
+      <p class="my-4">Confermi di voler elimanare questo giocatore {{player.name}} {{player.surname}}?</p>
+      <a class="btn btn-warning" @click.prevent="removePlayer()">Elimina</a>
+    </b-modal>
+
   </div>
 </template>
 

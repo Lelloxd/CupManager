@@ -117,7 +117,6 @@ export default {
         },
         reload() {
           this.isSubmitted = false;
-          this.form.name = this.form.surname = null;
         }
     },
     validations: {

@@ -97,15 +97,15 @@
     <!-- Elimina -->
     <b-modal id="modalDelete" hide-footer title="Elimina partita">
       <p class="my-4">Confermi di voler elimanare questa partita?</p>
-      <a v-b-modal.modalDelete href="#" class="btn btn-warning" @click.prevent="deleteMatch()">Elimina</a>
+      <a class="btn btn-warning" @click.prevent="deleteMatch()">Elimina</a>
     </b-modal>
 
     <!-- Completed -->
     <b-modal id="modalCompleted" hide-footer title="Salva partita">
       <p v-if="!isCompleted" class="my-4">Confermi di voler completare questa partita?</p>
       <p v-if="isCompleted" class="my-4">Confermi di voler ri-aggiornare questa partita?</p>
-      <a  v-if="!isCompleted" v-b-modal.modalCompleted href="#" class="btn btn-warning" @click.prevent="completedMatch(true)">Finita</a>
-      <a  v-if="isCompleted" v-b-modal.modalCompleted href="#" class="btn btn-warning" @click.prevent="completedMatch(false)">Ri-apri</a>
+      <a v-if="!isCompleted" v-b-modal.modalCompleted href="#" class="btn btn-warning" @click.prevent="completedMatch(true)">Finita</a>
+      <a v-if="isCompleted" v-b-modal.modalCompleted href="#" class="btn btn-warning" @click.prevent="completedMatch(false)">Ri-apri</a>
     </b-modal>
 
     <!-- Migliore in campo -->

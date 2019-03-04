@@ -11,6 +11,7 @@ import Match from '@/components/Match-Entity/Match'
 import Cards from '@/components/Cards/Cards'
 import ViewGroups from '@/components/Groups/ViewGroups'
 import Group from '@/components/Groups/Group'
+import Ranking from '@/components/Groups/Ranking'
 
 Vue.use(Router);
 
@@ -70,6 +71,11 @@ export default new Router({
       path: '/group',
       name: 'group',
       component: Group,
+    },
+    {
+      path: '/ranking',
+      name: 'ranking',
+      component: Ranking,
     }
   ],
 });

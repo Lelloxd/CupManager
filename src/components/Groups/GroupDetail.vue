@@ -1,12 +1,38 @@
 <template>
-  <div class="col-xs-12 col-sm-12 col-md-4 mx-auto">
+  <div>
     <div v-if="!loading">
-      <h3>{{group.name}}<h3>
-      <hr>
-      <b-table class="mt-3" striped hover :items="group.rankings" :fields="fields" selectable :select-mode= "'single'" @row-selected="rowSelected"/>
+      <p>{{group.name}}</p>
+      <b-table class="mt-3" striped hover :items="group.rankings" :fields="fields">
+         <template slot="team" slot-scope="data" >
+            {{getTeamName(data.item.id)}}
+          </template>
+          <template slot="action" slot-scope="data" >
+             <a class="btn btn-danger btn-sm" @click="deleteRanking(data.item.id)">Elimina</a>
+          </template>
+      </b-table>
+      <br/>
+      <p>Aggiungi squadra</p>
+      <select id="team" v-model="teamSelected" class="form-control">
+          <option v-for="team in selectableTeams" v-bind:key="team.id" v-bind:value="team">{{ team.name }}</option>
+      </select>
+      <a class="btn btn-info btn-sm mt-3" @click="createRanking()">Aggiungi</a>
+      <p><a v-b-modal.modalDelete class="btn btn-warning mt-5" >Elimina Gruppo</a></p>
     </div>
+
+    <!-- Elimina gruppo-->
+    <b-modal id="modalDelete" ref="modalDelete" hide-footer title="Elimina partita">
+      <p class="my-4">Confermi di voler elimanare questa gruppo?</p>
+      <a class="btn btn-warning mt-5" @click.prevent="deleteGroup()" >Elimina gruppo</a>
+    </b-modal>
+
+    <!-- Elimina ranking-->
+    <b-modal id="modalDeleteRanking" ref="modalDeleteRanking" hide-footer title="Elimina squadra">
+      <p class="my-4">Confermi di voler elimanare questa squadra dal gruppo?</p>
+      <a class="btn btn-warning mt-5" @click.prevent="deleteRanking()" >Elimina squadra</a>
+    </b-modal>
+
   </div>
 </template>
 
-<script src="./Group.js"></script>
+<script src="./GroupDetail.js"></script>
 

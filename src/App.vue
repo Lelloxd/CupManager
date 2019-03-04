@@ -24,6 +24,8 @@ import Match from './components/Match-Entity/Match.vue'
 import Cards from './components/Cards/Cards.vue'
 import Group from './components/Groups/Group.vue'
 import ViewGroups from './components/Groups/ViewGroups.vue'
+import GroupDetail from './components/Groups/GroupDetail.vue'
+import Ranking from './components/Groups/Ranking.vue'
 import moment from 'moment'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
@@ -44,7 +46,9 @@ export default {
     Matches,
     Cards,
     Group,
-    ViewGroups
+    ViewGroups,
+    GroupDetail,
+    Ranking
   }
 }
 </script>

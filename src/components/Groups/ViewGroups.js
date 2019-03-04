@@ -13,6 +13,7 @@ export default {
         return {
             loading: false,
             groups: this.getGroups(),
+            selected: false,
             groupId: '',
             fields: {
               name: {
@@ -31,7 +32,8 @@ export default {
         })
       },
       rowSelected(item){
-        this.groupId = item.id;
+        this.groupId = item[0].id;
+        this.selected = true;
         this.$refs.modalGroupDetail.show()
       }
   }

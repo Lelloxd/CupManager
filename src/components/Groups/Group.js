@@ -104,6 +104,7 @@ export default {
             } catch (error) { return error; }
         },
         reload() {
+          this.isSubmitted = false;
           this.$forceUpdate()
         }
     },

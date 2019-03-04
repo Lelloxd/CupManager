@@ -6,7 +6,7 @@
       <b-collapse is-nav id="nav_collapse">
         <b-navbar-nav>
           <b-nav-item-dropdown text="Classifiche" right>
-            <b-dropdown-item router-link to="/gironi">Gironi</b-dropdown-item>
+            <b-dropdown-item router-link to="/ranking">Gironi</b-dropdown-item>
             <b-dropdown-item router-link to="/capocannoniere">Capocannoniere</b-dropdown-item>
             <b-dropdown-item router-link to="/best">Miglior giocatore</b-dropdown-item>
             <b-dropdown-item router-link to="/cards">Cartellini</b-dropdown-item>
@@ -17,7 +17,7 @@
             <b-dropdown-item router-link to="nuovo-giocatore">Inserisci calciatori</b-dropdown-item>
           </b-nav-item-dropdown>
           <b-nav-item-dropdown text="Gruppi" right>
-            <b-dropdown-item router-link to="groups">Gruppi</b-dropdown-item>
+            <b-dropdown-item router-link to="groups">Gestisci Gruppi</b-dropdown-item>
           </b-nav-item-dropdown>
           <b-nav-item-dropdown text="Partite" right>
             <b-dropdown-item router-link to="all-matches">Partite</b-dropdown-item>

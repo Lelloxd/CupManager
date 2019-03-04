@@ -11,6 +11,7 @@ export default {
             selected: false,
             teams: this.getTeams(),
             team: [],
+            player: [],
             players: [],
             id: null,
             fields: {
@@ -23,6 +24,9 @@ export default {
               birthOfDay: {
                 label: 'Data di nascita',
                 formatter: value => moment(String(value)).format('DD/MM/YYYY')
+              },
+              action:{
+                label: '#'
               }
             }
         }
@@ -56,8 +60,18 @@ export default {
       remove(){
         const url = Vue.config.ApiUrl + '/team?id='+ this.id;
           axios.delete(url).then(response => {
-              window.location = '';
+            this.getTeams();
           })
+      },
+      removePlayer(){
+        const url = Vue.config.ApiUrl + '/player?id='+ this.player.id;
+          axios.delete(url).then(response => {
+              this.getTeam(this.id);
+              this.$refs.modalDelete.hide()
+          })
+      },
+      setPlayerId(player){
+        this.player = player;
       }
   }
 }

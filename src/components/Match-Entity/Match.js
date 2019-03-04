@@ -159,14 +159,31 @@ export default {
         });
       },
       deleteMatch(){
-        axios.delete(Vue.config.ApiUrl + "/match?id="+ this.match.id).then(response => {
-          this.$router.push({ name: 'all-matches' })
+        axios.put(Vue.config.ApiUrl + "/ranking/reopenMatch?matchId="+this.match.id).then(response => {
+          axios.delete(Vue.config.ApiUrl + "/match?id="+ this.match.id).then(response => {
+            this.$router.push({ name: 'all-matches' })
+          }).catch(error => {
+            console.log(error);
+          });
         }).catch(error => {
           console.log(error);
         });
       },
       completedMatch(completed){
         axios.put(Vue.config.ApiUrl + "/match/completedMatch?completed="+completed, this.match).then(response => {
+          if(!this.isCompleted){
+            axios.put(Vue.config.ApiUrl + "/ranking/match?matchId="+this.match.id).then(response => {
+              this.$router.push({ name: 'all-matches' })
+            }).catch(error => {
+              console.log(error);
+            });
+          } else{
+            axios.put(Vue.config.ApiUrl + "/ranking/reopenMatch?matchId="+this.match.id).then(response => {
+              this.$router.push({ name: 'all-matches' })
+            }).catch(error => {
+              console.log(error);
+            });
+          }
           this.$router.push({ name: 'all-matches' })
         }).catch(error => {
           console.log(error);

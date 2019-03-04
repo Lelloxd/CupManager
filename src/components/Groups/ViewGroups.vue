@@ -14,8 +14,8 @@
     </b-modal>
 
     <!-- Group Detail-->
-    <b-modal ref="modalGroupDetail" hide-footer title="Nuovo Gruppo">
-      <p>detail</p>
+    <b-modal ref="modalGroupDetail" hide-footer hide-title>
+      <groupDetail v-if="selected" :groupid='groupId'></groupDetail>
     </b-modal>
 
   </div>

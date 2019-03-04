@@ -103,7 +103,7 @@ export default {
             } catch (error) { return error; }
         },
         reload() {
-            window.location = '#/nuovo-team';
+          this.isSubmitted = false;
         }
     },
     validations: {
