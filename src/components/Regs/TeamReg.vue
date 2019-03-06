@@ -1,5 +1,6 @@
 <template>
   <div class="col-xs-12 col-sm-12 col-md-4 mx-auto">
+    <h2>Nuovo Giocatore</h2>
     <form v-if="!isSubmitted && !loading" @submit.prevent="submit" novalidate>
       <div class="form-group">
         <label for="name">Nome *</label>

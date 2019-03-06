@@ -1,7 +1,7 @@
 <template>
   <div>
     <div v-if="!loading">
-      <h2>Report Partita</h2>
+      <h2 >Report Partita</h2>
       <hr>
       <div class="container col-10 mt-3">
         <div class="row">
@@ -28,15 +28,15 @@
               <b-table class="mt-3" triped hover :items="Object.values(homePlayers)" :fields="fields">
                 <template slot="fullName" slot-scope="data">
                   {{ data.item.name}} {{ data.item.surname}}
-                  <div v-for="goal in data.item.goals" v-bind:key="goal.id">
-                    g
+                  <div class="inLine" v-for="goal in data.item.goals" v-bind:key="goal.id">
+                    <img src="../../assets/gol.png">
                   </div>
-                  <div v-for="card in data.item.cards" v-bind:key="card.id">
+                  <div class="inLine" v-for="card in data.item.cards" v-bind:key="card.id">
                     <div v-if="card.type == 'Ammonizione'">
-                      amm
+                      <img src="../../assets/yellow_card.svg.png">
                     </div>
                     <div v-if="card.type == 'Espulsione'">
-                      esp
+                      <img src="../../assets/red_card.png">
                     </div>
                   </div>
                 </template>
@@ -68,15 +68,15 @@
               <b-table class="mt-3" triped hover :items="guestPlayers" :fields="fields">
                 <template slot="fullName" slot-scope="data">
                   {{ data.item.name}} {{ data.item.surname}}
-                  <div v-for="goal in data.item.goals" v-bind:key="goal.id">
-                    g
+                  <div class="inLine" v-for="goal in data.item.goals" v-bind:key="goal.id">
+                    <img src="../../assets/gol.png">
                   </div>
-                  <div v-for="card in data.item.cards" v-bind:key="card.id">
+                  <div class="inLine" v-for="card in data.item.cards" v-bind:key="card.id">
                     <div v-if="card.type == 'Ammonizione'">
-                      amm
+                      <img src="../../assets/yellow_card.svg.png">
                     </div>
-                    <div v-if="card.type == ' Espulsione'">
-                      esp
+                    <div v-if="card.type == 'Espulsione'">
+                      <img src="../../assets/red_card.png">
                     </div>
                   </div>
                 </template>
@@ -181,5 +181,10 @@
 
   </div>
 </template>
+<style>
+.inLine{
+  display: inline-block
+}
+</style>
 
 <script src="./Match.js"></script>

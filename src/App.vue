@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <navbar/>
-    <div class="row justify-content-center" style="margin-top: 20px">
-      <div class="col-12">
+    <div class="row justify-content-center h-100" style="margin-top:20px">
+      <div class="col-12" >
         <router-view/>
       </div>
     </div>
@@ -26,6 +26,7 @@ import Group from './components/Groups/Group.vue'
 import ViewGroups from './components/Groups/ViewGroups.vue'
 import GroupDetail from './components/Groups/GroupDetail.vue'
 import Ranking from './components/Groups/Ranking.vue'
+import Statistic from './components/Statistic/Statistic.vue'
 import moment from 'moment'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
@@ -48,7 +49,8 @@ export default {
     Group,
     ViewGroups,
     GroupDetail,
-    Ranking
+    Ranking,
+    Statistic
   }
 }
 </script>
@@ -61,9 +63,15 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 0px;
+  height: 100%;
 }
+
 .logo {
   width: 200px;
   margin-bottom: 50px;
+}
+
+html, body{
+  height: 100%;
 }
 </style>

@@ -1,7 +1,8 @@
 <template>
   <div class="col-xs-12 col-sm-12 col-md-6 mx-auto">
     <div v-if="!loading">
-      <p>Selezione la squadra</p>
+      <h2>Squadre</h2>
+      <p style="margin-top: 20px">Selezione la squadra</p>
       <select v-model="team" @change="getTeam(team.id)">
         <option v-for="team in teams" v-bind:key="team.id" v-bind:value="team">{{ team.name }}</option>
       </select>

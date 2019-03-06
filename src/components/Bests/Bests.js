@@ -1,4 +1,3 @@
-import { required } from 'vuelidate/lib/validators';
 import axios from 'axios';
 import Vue from 'vue';
 
