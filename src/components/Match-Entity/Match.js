@@ -219,7 +219,7 @@ export default {
         this.allPlayers.forEach(player => {
           player.goals.forEach(goal => {
             if(goal.id === goalId){
-              name =  player.name + ' ' + player.surname;
+              name =  player.numberOfMesh + '. ' + player.name + ' ' + player.surname;
             }
           });
         });
@@ -230,7 +230,7 @@ export default {
         this.allPlayers.forEach(player => {
           player.cards.forEach(card => {
             if(card.id === cardId){
-              name =  player.name + ' ' + player.surname;
+              name =  player.numberOfMesh + '. ' + player.name + ' ' + player.surname;
             }
           });
         });
@@ -241,7 +241,7 @@ export default {
         this.allPlayers.forEach(player => {
           player.best.forEach(best => {
             if(best.id === bestId){
-              name =  player.name + ' ' + player.surname;
+              name = player.numberOfMesh + '. ' + player.name + ' ' + player.surname;
             }
           });
         });
@@ -318,6 +318,9 @@ export default {
         }).catch(error => {
           console.log(error);
         });
+      },
+      getStatistic(){
+        this.$router.push({ name: 'statistic', query: { id: this.match.id } })
       }
   }
 }

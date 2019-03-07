@@ -18,6 +18,11 @@
         <div v-if="isErrorField('birthOfDay')" class="invalid-feedback">Campo data di nascita obbligatorio!</div>
       </div>
       <div class="form-group">
+        <label for="numberOfMesh">Numero maglia *</label>
+        <input type="text" class="form-control" id="numberOfMesh" v-model.lazy.trim="form.numberOfMesh" @blur="onFieldBlur('numberOfMesh')" v-bind:class="getFieldClasses('numberOfMesh')">
+        <div v-if="isErrorField('numberOfMesh')" class="invalid-feedback">Campo numero maglia obbligatorio!</div>
+      </div>
+      <div class="form-group">
         <label for="team">Team *</label>
         <select id="team" class="form-control" v-model="form.team" @blur="onFieldBlur('team')" v-bind:class="getFieldClasses('team')">
             <option v-for="team in teams" v-bind:key="team.id" v-bind:value="team">{{ team.name }}</option>

@@ -17,6 +17,7 @@ export default {
                 name: '',
                 surname: '',
                 birthOfDay:'',
+                numberOfMesh: 0,
                 team: null
             }
         }
@@ -124,6 +125,7 @@ export default {
             name: { required },
             surname: { required },
             birthOfDay: {required},
+            numberOfMesh: {required},
             team: {required},
         }
     },

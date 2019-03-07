@@ -15,6 +15,9 @@ export default {
               guestPlayers: [{}],
             },
             fields:{
+              numberOfMesh:{
+                label: ""
+              },
               name: {
                 label: ""
               }
@@ -27,7 +30,9 @@ export default {
             totalYellowHome: 0,
             totalRedHome: 0,
             totalYellowGuest: 0,
-            totalRedGuest: 0
+            totalRedGuest: 0,
+            mapGoalHome: new Map(),
+            mapGoalGuest: new Map()
         }
     },
     methods: {
@@ -56,6 +61,31 @@ export default {
             });
             this.yellowValue = (this.totalYellowHome * 100) / (this.totalYellowHome + this.totalYellowGuest);
             this.redValue = (this.totalRedHome * 100) / (this.totalRedHome + this.totalRedGuest);
+
+            this.statisticMatch.homeGoals.forEach(gol => {
+              var key = this.getGolPlayerNameHome(gol.id);
+              var goals = this.mapGoalHome.get(key);
+              var result = '';
+              if(goals === undefined){
+                result = gol.minute + "'"
+              } else{
+                var result = goals + ' ' + + gol.minute + "'"
+              }
+              this.mapGoalHome.set(key,result);
+            });
+
+            this.statisticMatch.guestGoals.forEach(gol => {
+              var key = this.getGolPlayerNameGuest(gol.id);
+              var goals = this.mapGoalGuest.get(key);
+              var result = '';
+              if(goals === undefined){
+                result = gol.minute + "'"
+              } else{
+                var result = goals + ' ' + gol.minute + "'"
+              }
+              this.mapGoalGuest.set(key,result);
+            });
+
             this.loading = false;
         })
       },

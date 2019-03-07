@@ -25,9 +25,9 @@
                 <b-button class="btn btn-info btn-sm" v-b-modal.modalCartellino @click="setHomePlayersCards()">Cartellino</b-button>
                 <b-button class="btn btn-info btn-sm" v-b-modal.modalBest @click="setHomePlayersBest()">Migliore in campo</b-button>
               </div>
-              <b-table class="mt-3" triped hover :items="Object.values(homePlayers)" :fields="fields">
+              <b-table :small=true class="mt-3" triped hover :items="Object.values(homePlayers)" :fields="fields">
                 <template slot="fullName" slot-scope="data">
-                  {{ data.item.name}} {{ data.item.surname}}
+                  {{ data.item.numberOfMesh}}. {{ data.item.name}} {{ data.item.surname}}
                   <div class="inLine" v-for="goal in data.item.goals" v-bind:key="goal.id">
                     <img src="../../assets/gol.png">
                   </div>
@@ -65,9 +65,9 @@
                 <b-button class="btn btn-info btn-sm" v-b-modal.modalCartellino @click="setGuestPlayersCards()">Cartellino</b-button>
                 <b-button class="btn btn-info btn-sm" v-b-modal.modalBest @click="setGuestPlayersBest()">Migliore in campo</b-button>
               </div>
-              <b-table class="mt-3" triped hover :items="guestPlayers" :fields="fields">
+              <b-table :small=true class="mt-3" triped hover :items="guestPlayers" :fields="fields">
                 <template slot="fullName" slot-scope="data">
-                  {{ data.item.name}} {{ data.item.surname}}
+                  {{ data.item.numberOfMesh}}. {{ data.item.name}} {{ data.item.surname}}
                   <div class="inLine" v-for="goal in data.item.goals" v-bind:key="goal.id">
                     <img src="../../assets/gol.png">
                   </div>
@@ -93,6 +93,7 @@
     <a v-b-modal.modalDelete href="#" class="btn btn-warning mt-5" >Elimina</a>
     <a v-if="!isCompleted" v-b-modal.modalCompleted href="#" class="btn btn-warning mt-5" >Finita</a>
     <a v-if="isCompleted" v-b-modal.modalCompleted href="#" class="btn btn-warning mt-5" >Ri-apri</a>
+    <a v-if="isCompleted" @click="getStatistic()" class="btn btn-warning mt-5" >Genera statistiche</a>
 
     <!-- Elimina -->
     <b-modal id="modalDelete" hide-footer title="Elimina partita">
@@ -112,7 +113,7 @@
     <b-modal id="modalBest" hide-footer title="Migliore in campo">
       <p class="my-2">Seleziona Giocatore</p>
       <select v-model="player">
-        <option v-for="player in selectedTeamPlayers" v-bind:key="player.id" v-bind:value="player">{{ player.name }} {{ player.surname }}</option>
+        <option v-for="player in selectedTeamPlayers" v-bind:key="player.id" v-bind:value="player">{{ player.numberOfMesh}}. {{ player.name }} {{ player.surname }}</option>
       </select>
       <p class="my-4"><a v-b-modal.gol href="#" class="btn btn-warning" @click.prevent="addBest(player)">Salva</a></p>
       <b-table class="mt-3" triped hover :items="selectedTeamBest" :fields="bestFields">
@@ -129,7 +130,7 @@
     <b-modal id="modalGol" hide-footer title="Gooool">
       <p class="my-2">Seleziona Giocatore</p>
       <select v-model="player">
-        <option v-for="player in selectedTeamPlayers" v-bind:key="player.id" v-bind:value="player">{{ player.name }} {{ player.surname }}</option>
+        <option v-for="player in selectedTeamPlayers" v-bind:key="player.id" v-bind:value="player">{{ player.numberOfMesh}}. {{ player.name }} {{ player.surname }}</option>
       </select>
       <p class="my-2">Minuto di gioco</p>
       <div class="col-xs-12 col-sm-12 col-md-4 mx-auto">
@@ -153,7 +154,7 @@
           <div class="col-sm">
             <p class="my-2">Seleziona Giocatore</p>
             <select v-model="player">
-              <option v-for="player in Object.values(selectedTeamPlayers)" v-bind:key="player.id" v-bind:value="player">{{ player.name }} {{ player.surname }}</option>
+              <option v-for="player in Object.values(selectedTeamPlayers)" v-bind:key="player.id" v-bind:value="player">{{ player.numberOfMesh}}. {{ player.name }} {{ player.surname }}</option>
             </select>
           </div>
           <div class="col-sm">

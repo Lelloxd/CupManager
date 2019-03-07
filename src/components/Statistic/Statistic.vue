@@ -1,34 +1,36 @@
 <template>
   <div class="statistic h-100" :style="{'background-image': 'url(' + require('../../assets/sfondo.jpg') + ')'}">
   <br>
-    <div class="container col-12 mt-3 data">
-      <span style="color:white">{{statisticMatch.date}}   Rovarè Stadium</span>
+    <div class="container col-11 data">
+      <span style="color:white">
+        {{statisticMatch.date}} <img class= "ml-2 icon" src="../../assets/whistle.png"/> Marco Piovesan <img class= "ml-2 icon"  src="../../assets/stadium.png"/> Rovarè Stadium
+      </span>
     </div>
     <br>
-    <img class="text-center" src="../../assets/LOGO_TORNEO.png" style="margin-top:20px">
+    <img class="text-center mt-2" src="../../assets/LOGO_TORNEO.png" style="margin-top:20px">
     <div class="container col-12 father">
-      <div class="container col-10 mt-3">
-        <b-card class="risultato">
-          <b-card-text>
-            <div class="row">
-              <div class="col-sm-4 team-name">{{statisticMatch.homeTeam}}</div>
-              <div class="col-sm-4 team-name" >{{statisticMatch.homeResult}} - {{statisticMatch.guestResult}}</div>
-              <div class="col-sm-4 team-name">{{statisticMatch.guestTeam}}</div>
-            </div>
-          </b-card-text>
-        </b-card>
+      <div class="container col-10 mt-4">
+        <div class="row risultato">
+          <div class="col-sm-5 team-name"><a>{{statisticMatch.homeTeam}}</a></div>
+          <div class="col-sm-2 team-name" style="background-color:#e90052" ><strong>{{statisticMatch.homeResult}} - {{statisticMatch.guestResult}}</strong></div>
+          <div class="col-sm-5 team-name">{{statisticMatch.guestTeam}}</div>
+        </div>
       </div>
-      <div class="container col-3">
+      <div class="container col-12">
         <div class="row">
-          <div class="col-sm-6 mt-2" style="text-align: right;">
-            <div class="inLine" v-for="goal in statisticMatch.homeGoals" v-bind:key="goal.id">
-              <span style="font-size: 15px; color:white">{{getGolPlayerNameHome(goal.id)}} {{goal.minute}}'</span>
+          <div class="col-sm-6 mt-2" style="text-align: right; ">
+            <div v-for="[name, gol] of mapGoalHome" v-bind:key="name">
+              <div style="font-size: 15px; color:white">
+                {{name}} {{gol}} <img src="../../assets/soccer-ball.png"/>
+              </div>
             </div>
           </div>
           <div class="col-sm-1 vl"></div>
           <div class="col-sm-6 mt-2" style="text-align: left;">
-            <div class="inLine" v-for="goal in statisticMatch.guestGoals" v-bind:key="goal.id">
-              <span style="font-size: 15px; color:white">{{getGolPlayerNameGuest(goal.id)}} {{goal.minute}}'</span>
+            <div class="inLine" v-for="[name, gol] of mapGoalGuest" v-bind:key="gol">
+              <div style="font-size: 15px; color:white">
+                <img src="../../assets/soccer-ball.png"/> {{name}} {{gol}}
+              </div>
             </div>
           </div>
         </div>
@@ -37,20 +39,28 @@
     <div class="container col-10 mt-3">
       <div class="row">
         <div class="col-sm-4">
-          <b-card class="card" title="Giocatori">
+          <b-card class="card">
             <b-card-text>
-              <b-table class="mt-3" striped hover :items="statisticMatch.homePlayers" :fields="fields">
-                <template slot="name" slot-scope="data" hide>
-                  {{ data.item.name}} {{ data.item.surname}}
-                  <div class="inLine" v-for="goal in data.item.goals" v-bind:key="goal.id">
-                    <img src="../../assets/gol.png">
+              <h4 class="mt-3">Giocatori</h4>
+              <b-table :small=true class="mt-1" striped hover :items="statisticMatch.homePlayers" :fields="fields">
+                <template slot="numberOfMesh" slot-scope="data" hide>
+                  <div class="ml-5" style="text-align: right">
+                    {{ data.item.numberOfMesh}}.
                   </div>
-                  <div class="inLine" v-for="card in data.item.cards" v-bind:key="card.id">
-                    <div v-if="card.type == 'Ammonizione'">
-                      <img src="../../assets/yellow_card.svg.png">
+                </template>
+                <template slot="name" slot-scope="data" hide>
+                  <div style="text-align: left">
+                    {{ data.item.name}} {{ data.item.surname}}
+                    <div class="inLine" v-for="goal in data.item.goals" v-bind:key="goal.id">
+                      <img src="../../assets/gol.png">
                     </div>
-                    <div v-if="card.type == 'Espulsione'">
-                      <img src="../../assets/red_card.png">
+                    <div class="inLine" v-for="card in data.item.cards" v-bind:key="card.id">
+                      <div v-if="card.type == 'Ammonizione'">
+                        <img src="../../assets/yellow_card.svg.png">
+                      </div>
+                      <div v-if="card.type == 'Espulsione'">
+                        <img src="../../assets/red_card.png">
+                      </div>
                     </div>
                   </div>
                 </template>
@@ -60,95 +70,104 @@
         </div>
         <div class="col-sm-4">
           <b-card class="card">
-            <b-card-text>
+            <b-card-text class="mt-1">
               <div>
                 <span>Tiri in porta</span>
                 <div class="row">
-                   <div class="pr-0 mb-0 col-sm-2">
+                   <div class="pr-0 mb-0 col-sm-2" style="font-size: 17px">
                      {{statisticMatch.homeShotsOnGol}}
                    </div>
-                   <div class="pl-0 pr-0 col-sm-8">
-                      <b-progress variant="primary" class="mt-1" :value="onShotValue"/>
+                   <div class="pl-0 pr-0 col-sm-8 mt-1">
+                      <b-progress height="10px" variant="primary" class="mt-1" :value="onShotValue"/>
                    </div>
-                   <div class="pl-0 mb-0 col-sm-2">
+                   <div class="pl-0 mb-0 col-sm-2" style="font-size: 17px">
                      {{statisticMatch.guestShotsOnGol}}
                    </div>
                 </div>
               </div>
-              <div class="mt-3">
+              <div class="mt-2">
                 <span>Tiri fuori</span>
                 <div class="row">
-                   <div class="pr-0 mb-0 col-sm-2">
+                   <div class="pr-0 mb-0 col-sm-2" style="font-size: 17px">
                      {{statisticMatch.homeShotsOutGol}}
                    </div>
-                   <div class="pl-0 pr-0 col-sm-8">
-                      <b-progress variant="primary" class="mt-1" :value="outShotValue"/>
+                   <div class="pl-0 pr-0 col-sm-8 mt-1">
+                      <b-progress height="10px" variant="primary" class="mt-1" :value="outShotValue"/>
                    </div>
-                   <div class="pl-0 mb-0 col-sm-2">
+                   <div class="pl-0 mb-0 col-sm-2" style="font-size: 17px">
                      {{statisticMatch.guestShotsOutGol}}
                    </div>
                 </div>
               </div>
-              <div class="mt-3">
+              <div class="mt-2">
                 <span>Angoli</span>
                 <div class="row">
-                   <div class="pr-0 mb-0 col-sm-2">
+                   <div class="pr-0 mb-0 col-sm-2" style="font-size: 17px">
                      {{statisticMatch.homeCorners}}
                    </div>
-                   <div class="pl-0 pr-0 col-sm-8">
-                      <b-progress variant="primary" class="mt-1" :value="cornerValue"/>
+                   <div class="pl-0 pr-0 col-sm-8 mt-1">
+                      <b-progress height="10px" variant="primary" class="mt-1" :value="cornerValue"/>
                    </div>
-                   <div class="pl-0 mb-0 col-sm-2">
+                   <div class="pl-0 mb-0 col-sm-2" style="font-size: 17px">
                      {{statisticMatch.guestCorners}}
                    </div>
                 </div>
               </div>
-              <div class="mt-3">
+              <div class="mt-2">
                 <span>Ammonizioni</span>
                 <div class="row">
-                   <div class="pr-0 mb-0 col-sm-2">
+                   <div class="pr-0 mb-0 col-sm-2" style="font-size: 17px">
                      {{totalYellowHome}}
                    </div>
-                   <div class="pl-0 pr-0 col-sm-8">
-                      <b-progress variant="primary" class="mt-1" :value="yellowValue"/>
+                   <div class="pl-0 pr-0 col-sm-8 mt-1">
+                      <b-progress height="10px" variant="primary" class="mt-1" :value="yellowValue"/>
                    </div>
-                   <div class="pl-0 mb-0 col-sm-2">
+                   <div class="pl-0 mb-0 col-sm-2" style="font-size: 17px">
                      {{totalYellowGuest}}
                    </div>
                 </div>
               </div>
-              <div class="mt-3">
+              <div class="mt-2">
                 <span>Espulsioni</span>
                 <div class="row">
-                   <div class="pr-0 mb-0 col-sm-2">
+                   <div class="pr-0 mb-0 col-sm-2" style="font-size: 17px">
                      {{totalRedHome}}
                    </div>
-                   <div class="pl-0 pr-0 col-sm-8">
-                      <b-progress variant="primary" class="mt-1" :value="redValue"/>
+                   <div class="pl-0 pr-0 col-sm-8 mt-1">
+                      <b-progress height="10px" variant="primary" class="mt-1" :value="redValue"/>
                    </div>
-                   <div class="pl-0 mb-0 col-sm-2">
+                   <div class="pl-0 mb-0 col-sm-2" style="font-size: 17px">
                      {{totalRedGuest}}
                    </div>
                 </div>
               </div>
+              <br/>
             </b-card-text>
           </b-card>
         </div>
         <div class="col-sm-4">
-          <b-card class="card" title="Giocatori">
+          <b-card class="card">
+            <h4 class="mt-3">Giocatori</h4>
             <b-card-text>
-              <b-table class="mt-3" striped hover :items="statisticMatch.guestPlayers" :fields="fields">
-                <template slot="name" slot-scope="data">
-                  {{ data.item.name}} {{ data.item.surname}}
-                  <div class="inLine" v-for="goal in data.item.goals" v-bind:key="goal.id">
-                    <img src="../../assets/gol.png">
+              <b-table :small=true class="mt-1" striped hover :items="statisticMatch.guestPlayers" :fields="fields">
+                <template slot="numberOfMesh" slot-scope="data" hide>
+                  <div class="ml-5" style="text-align: right">
+                    {{ data.item.numberOfMesh}}.
                   </div>
-                  <div class="inLine" v-for="card in data.item.cards" v-bind:key="card.id">
-                    <div v-if="card.type == 'Ammonizione'">
-                      <img src="../../assets/yellow_card.svg.png">
+                </template>
+                <template slot="name" slot-scope="data" hide>
+                  <div style="text-align: left">
+                    {{ data.item.name}} {{ data.item.surname}}
+                    <div class="inLine" v-for="goal in data.item.goals" v-bind:key="goal.id">
+                      <img src="../../assets/gol.png">
                     </div>
-                    <div v-else>
-                      <img src="../../assets/red_card.png">
+                    <div class="inLine" v-for="card in data.item.cards" v-bind:key="card.id">
+                      <div v-if="card.type == 'Ammonizione'">
+                        <img src="../../assets/yellow_card.svg.png">
+                      </div>
+                      <div v-if="card.type == 'Espulsione'">
+                        <img src="../../assets/red_card.png">
+                      </div>
                     </div>
                   </div>
                 </template>
@@ -175,15 +194,17 @@
   display: inline-block
 }
 .data{
-   background-color:rgba(34, 3, 70, 0.589);
+   background-color:rgba(56, 0, 60, 0.5);
    text-align: left
 }
 .risultato{
   color:white;
-  background-color: rgb(34, 3, 70);
+  height: 100%;
+  background-color:rgb(56, 0, 60);
+  text-align: center
 }
 .father{
-  background-color: rgba(34, 3, 70, 0.589);
+  background-color: rgba(56, 0, 60, 0.5);
   text-align: center;
 }
 .vl {
@@ -192,5 +213,27 @@
   position: absolute;
   left: 50%;
   }
+.card{
+  opacity:0.9;
+}
+.card-body {
+  padding:  0px;
+}
+.table{
+  margin-bottom: 0px;
+}
+.table th{
+  border-top: 0px
+}
+.progress{
+  background-color: rgb(77, 77, 247)
+}
+.bg-primary {
+    background-color: rgb(231, 77, 77) !important;
+}
+.icon{
+  width: auto;
+  height: 18px;
+}
 </style>
 

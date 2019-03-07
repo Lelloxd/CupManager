@@ -37,7 +37,6 @@ export default {
         })
       },
       rowSelected(item) {
-        console.log(item[0].matchId);
         this.$router.push({ name: 'match', query: { id: item[0].matchId } })
       }
   }
