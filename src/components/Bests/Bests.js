@@ -7,6 +7,16 @@ export default {
         return {
             loading: false,
             bests: this.getBests(),
+            fields:{
+              name: {
+                label: "Nome",
+                tdClass: 'rowStyle'
+              },
+              best:{
+                label: "Migliore in campo",
+                tdClass: 'rowStyle'
+              }
+            }
         }
     },
     methods: {

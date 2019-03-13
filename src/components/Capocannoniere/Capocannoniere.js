@@ -7,6 +7,16 @@ export default {
         return {
             loading: false,
             capocannoniere: this.getCapocannoniere(),
+            fields: {
+              name: {
+                label: 'Nome',
+                tdClass: 'rowStyle'
+              },
+              gol:{
+                label: 'Gol',
+                tdClass: 'rowStyle',
+              }
+            }
         }
     },
     methods: {

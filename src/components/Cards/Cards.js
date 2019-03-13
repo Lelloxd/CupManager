@@ -7,6 +7,17 @@ export default {
         return {
             loading: false,
             cards: this.getCards(),
+            fields:{
+              name: {
+                label: "Nome"
+              },
+              ammonizione:{
+                label: "Ammonizioni"
+              },
+              espulsione:{
+                label: "Espulsioni"
+              }
+            }
         }
     },
     methods: {

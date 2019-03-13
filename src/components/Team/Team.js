@@ -15,6 +15,9 @@ export default {
             players: [],
             id: null,
             fields: {
+              numberOfMesh: {
+                label: 'N.'
+              },
               name: {
                 label: 'Nome',
               },

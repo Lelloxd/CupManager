@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <navbar/>
-    <div class="row justify-content-center h-100" style="margin-top:20px">
+    <div class="row justify-content-center h-100">
       <div class="col-12" >
         <router-view/>
       </div>

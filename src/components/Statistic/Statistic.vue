@@ -1,9 +1,9 @@
 <template>
-  <div class="statistic h-100" :style="{'background-image': 'url(' + require('../../assets/sfondo.jpg') + ')'}">
+  <div v-if="!loading" class="statistic h-100" :style="{'background-image': 'url(' + require('../../assets/sfondo.jpg') + ')'}">
   <br>
     <div class="container col-11 data">
       <span style="color:white">
-        {{statisticMatch.date}} <img class= "ml-2 icon" src="../../assets/whistle.png"/> Marco Piovesan <img class= "ml-2 icon"  src="../../assets/stadium.png"/> Rovarè Stadium
+        {{statisticMatch.date}} <img class= "ml-2 icon" src="../../assets/whistle.png"/>  {{statisticMatch.referee}} <img class= "ml-2 icon"  src="../../assets/stadium.png"/> Rovarè Stadium
       </span>
     </div>
     <br>
@@ -27,7 +27,7 @@
           </div>
           <div class="col-sm-1 vl"></div>
           <div class="col-sm-6 mt-2" style="text-align: left;">
-            <div class="inLine" v-for="[name, gol] of mapGoalGuest" v-bind:key="gol">
+            <div v-for="[name, gol] of mapGoalGuest" v-bind:key="gol">
               <div style="font-size: 15px; color:white">
                 <img src="../../assets/soccer-ball.png"/> {{name}} {{gol}}
               </div>
@@ -36,7 +36,7 @@
         </div>
       </div>
     </div>
-    <div class="container col-10 mt-3">
+    <div class="container col-10 mt-4">
       <div class="row">
         <div class="col-sm-4">
           <b-card class="card">
@@ -51,16 +51,19 @@
                 <template slot="name" slot-scope="data" hide>
                   <div style="text-align: left">
                     {{ data.item.name}} {{ data.item.surname}}
-                    <div class="inLine" v-for="goal in data.item.goals" v-bind:key="goal.id">
+                    <div class="inLine" v-for="index in getNumberOfGoal(data.item, true)" v-bind:key="index">
                       <img src="../../assets/gol.png">
                     </div>
-                    <div class="inLine" v-for="card in data.item.cards" v-bind:key="card.id">
-                      <div v-if="card.type == 'Ammonizione'">
+                    <div class="inLine" >
+                      <div class="inLine" v-for="index in getNumberOfCard(data.item, true, 'Ammonizione')" v-bind:key="index">
                         <img src="../../assets/yellow_card.svg.png">
                       </div>
-                      <div v-if="card.type == 'Espulsione'">
+                      <div class="inLine" v-for="index in getNumberOfCard(data.item, true, 'Espulsione')" v-bind:key="index">
                         <img src="../../assets/red_card.png">
                       </div>
+                    </div>
+                    <div class="inLine" v-for="index in getNumberOfStar(data.item, true)" v-bind:key="index">
+                      <img class="icon2" src="../../assets/star.png">
                     </div>
                   </div>
                 </template>
@@ -158,16 +161,19 @@
                 <template slot="name" slot-scope="data" hide>
                   <div style="text-align: left">
                     {{ data.item.name}} {{ data.item.surname}}
-                    <div class="inLine" v-for="goal in data.item.goals" v-bind:key="goal.id">
+                    <div class="inLine" v-for="index in getNumberOfGoal(data.item, false)" v-bind:key="index">
                       <img src="../../assets/gol.png">
                     </div>
-                    <div class="inLine" v-for="card in data.item.cards" v-bind:key="card.id">
-                      <div v-if="card.type == 'Ammonizione'">
+                    <div class="inLine" >
+                      <div class="inLine" v-for="index in getNumberOfCard(data.item, false, 'Ammonizione')" v-bind:key="index">
                         <img src="../../assets/yellow_card.svg.png">
                       </div>
-                      <div v-if="card.type == 'Espulsione'">
+                      <div class="inLine" v-for="index in getNumberOfCard(data.item, false, 'Espulsione')" v-bind:key="index">
                         <img src="../../assets/red_card.png">
                       </div>
+                    </div>
+                    <div class="inLine" v-for="index in getNumberOfStar(data.item, false)" v-bind:key="index">
+                       <img class="icon2" src="../../assets/star.png">
                     </div>
                   </div>
                 </template>
@@ -234,6 +240,10 @@
 .icon{
   width: auto;
   height: 18px;
+}
+.icon2{
+  width: auto;
+  height: 20px;
 }
 </style>
 

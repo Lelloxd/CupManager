@@ -173,18 +173,17 @@ export default {
         axios.put(Vue.config.ApiUrl + "/match/completedMatch?completed="+completed, this.match).then(response => {
           if(!this.isCompleted){
             axios.put(Vue.config.ApiUrl + "/ranking/match?matchId="+this.match.id).then(response => {
-              this.$router.push({ name: 'all-matches' })
             }).catch(error => {
               console.log(error);
             });
           } else{
             axios.put(Vue.config.ApiUrl + "/ranking/reopenMatch?matchId="+this.match.id).then(response => {
-              this.$router.push({ name: 'all-matches' })
             }).catch(error => {
               console.log(error);
             });
           }
-          this.$router.push({ name: 'all-matches' })
+          this.getStatisticsMatch();
+          this.getMatch()
         }).catch(error => {
           console.log(error);
         });
@@ -318,6 +317,58 @@ export default {
         }).catch(error => {
           console.log(error);
         });
+      },
+      getNumberOfGoal(player, isHome){
+        var count = 0;
+        var goals = [];
+        if(isHome){
+          if(this.statisticMatch.homeGoals != undefined){
+            goals = this.statisticMatch.homeGoals;
+          }
+        }
+        else{
+          if(this.statisticMatch.guestGoals != undefined){
+            goals = this.statisticMatch.guestGoals;
+          }
+        }
+        if(goals != undefined){
+          goals.forEach(gol => {
+            if(player.goals != undefined){
+                player.goals.forEach(playerGol =>{
+                if(gol.id === playerGol.id){
+                  count++;
+                }
+              });
+            }
+          });
+        }
+        return count;
+      },
+      getNumberOfCard(player, isHome, type){
+        var count = 0;
+        var cards = [];
+        if(isHome){
+          if(this.statisticMatch.homeCards != undefined){
+            cards = this.statisticMatch.homeCards;
+          }
+        }
+        else{
+          if(this.statisticMatch.guestCards != undefined){
+            cards = this.statisticMatch.guestCards;
+          }
+        }
+        if(cards != undefined){
+          cards.forEach(card => {
+            if(player.cards != undefined){
+                player.cards.forEach(playerCard =>{
+                if(card.id === playerCard.id && card.type === type){
+                  count++;
+                }
+              });
+            }
+          });
+        }
+        return count;
       },
       getStatistic(){
         this.$router.push({ name: 'statistic', query: { id: this.match.id } })

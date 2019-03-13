@@ -41,7 +41,6 @@ export default {
         const url = Vue.config.ApiUrl + '/match/statistics?id='+ this.$route.query.id;
         axios.get(url).then(response => {
             this.statisticMatch = response.data;
-
             this.onShotValue = (response.data.homeShotsOnGol * 100) / (response.data.homeShotsOnGol + response.data.guestShotsOnGol);
             this.outShotValue = (response.data.homeShotsOutGol * 100) / (response.data.homeShotsOutGol + response.data.guestShotsOutGol);
             this.cornerValue = (response.data.homeCorners * 100) / (response.data.homeCorners + response.data.guestCorners);
@@ -110,6 +109,84 @@ export default {
           });
         });
         return name;
+      },
+      getNumberOfGoal(player, isHome){
+        var count = 0;
+        var goals = [];
+        if(isHome){
+          if(this.statisticMatch.homeGoals != undefined){
+            goals = this.statisticMatch.homeGoals;
+          }
+        }
+        else{
+          if(this.statisticMatch.guestGoals != undefined){
+            goals = this.statisticMatch.guestGoals;
+          }
+        }
+        if(goals != undefined){
+          goals.forEach(gol => {
+            if(player.goals != undefined){
+                player.goals.forEach(playerGol =>{
+                if(gol.id === playerGol.id){
+                  count++;
+                }
+              });
+            }
+          });
+        }
+        return count;
+      },
+      getNumberOfStar(player, isHome){
+        var count = 0;
+        var bests = [];
+        if(isHome){
+          if(this.statisticMatch.homeBest != undefined){
+            bests = this.statisticMatch.homeBest;
+          }
+        }
+        else{
+          if(this.statisticMatch.guestBest != undefined){
+            bests = this.statisticMatch.guestBest;
+          }
+        }
+        if(bests != undefined){
+          bests.forEach(best => {
+            if(player.best != undefined){
+                player.best.forEach(playerBest =>{
+                if(best.id === playerBest.id){
+                  count++;
+                }
+              });
+            }
+          });
+        }
+        return count;
+      },
+      getNumberOfCard(player, isHome, type){
+        var count = 0;
+        var cards = [];
+        if(isHome){
+          if(this.statisticMatch.homeCards != undefined){
+            cards = this.statisticMatch.homeCards;
+          }
+        }
+        else{
+          if(this.statisticMatch.guestCards != undefined){
+            cards = this.statisticMatch.guestCards;
+          }
+        }
+        if(cards != undefined){
+          cards.forEach(card => {
+            if(player.cards != undefined){
+                player.cards.forEach(playerCard =>{
+                if(card.id === playerCard.id && card.type === type){
+                  count++;
+                }
+              });
+            }
+          });
+        }
+        return count;
       }
   },mounted: function() {
     this.getStatisticsMatch();

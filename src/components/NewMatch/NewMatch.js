@@ -15,6 +15,7 @@ export default {
           form: {
             homeTeam: '',
             guestTeam: '',
+            referee: '',
             completed: false,
             date: ''
           },
@@ -124,7 +125,8 @@ export default {
       form: {
           homeTeam: { required },
           guestTeam: { required },
-          date: {required}
+          date: {required},
+          referee: {required}
       }
   },
   watch: {
