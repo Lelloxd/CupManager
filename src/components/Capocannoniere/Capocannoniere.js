@@ -3,30 +3,32 @@ import Vue from 'vue';
 
 export default {
   name: 'capocannoniere',
-    data() {
-        return {
-            loading: false,
-            capocannoniere: this.getCapocannoniere(),
-            fields: {
-              name: {
-                label: 'Nome',
-                tdClass: 'rowStyle'
-              },
-              gol:{
-                label: 'Gol',
-                tdClass: 'rowStyle',
-              }
-            }
-        }
+
+  data() {
+    return {
+      capocannoniere: this.getCapocannoniere(),
+      fields: {
+        name: {
+          label: 'Nome',
+          tdClass: 'rowStyle',
+        },
+        gol: {
+          label: 'Gol',
+          tdClass: 'rowStyle',
+        },
+      },
+      loading: false,
+    };
+  },
+  methods: {
+    getCapocannoniere() {
+      this.loading = true;
+      const url = `${Vue.config.ApiUrl}/capocannoniere`;
+      axios.get(url)
+        .then((response) => {
+          this.capocannoniere = response.data;
+          this.loading = false;
+        });
     },
-    methods: {
-      getCapocannoniere() {
-        this.loading = true;
-        const url = Vue.config.ApiUrl + '/capocannoniere';
-        axios.get(url).then(response => {
-            this.capocannoniere = response.data;
-            this.loading = false;
-        })
-      }
-  }
-}
+  },
+};

@@ -2,7 +2,7 @@
   <div class="component h-100">
     <div class="col-md-6">
       <div class="content" v-if="!loading">
-        <img src="../../assets/logo.png">
+        <img src="~@/assets/logo.png">
 
         <div class="mt-5" v-for="group in groups" v-bind:key="group.id">
           <b-card>
@@ -24,7 +24,7 @@
 
       <div class="loading" v-if="loading">
         <span>LOADING</span>
-        <img src="../../assets/loader.svg">
+        <img src="~@/assets/loader.svg">
       </div>
     </div>
   </div>
