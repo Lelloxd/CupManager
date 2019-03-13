@@ -1,0 +1,48 @@
+@import './settings';
+
+.component {
+  background-image: url('~@/assets/background.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+
+  .content {
+    margin-top: 3em;
+  }
+
+  .card {
+    border: 0;
+  }
+
+  .card-body {
+    padding: 0;
+
+    .table {
+      th {
+        border-top: 0;
+      }
+    }
+  }
+
+  .card-text {
+    background: $blue;
+    color: $white;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 35px;
+  }
+
+  .card-form {
+    background: $grey-light;
+  }
+
+  .card-match {
+    opacity: .9;
+  }
+
+  .row-style {
+    width: 50%;
+  }
+}

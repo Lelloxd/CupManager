@@ -1,0 +1,23 @@
+@import './styles/settings';
+
+html,
+body {
+  height: 100%;
+}
+
+.app {
+  color: $black-light;
+  font-family: 'Muli', sans-serif;
+  height: 100%;
+  margin-top: 0;
+  text-align: center;
+
+  .app-content {
+    height: calc(100% - 56px);
+  }
+}
+
+.logo {
+  margin-bottom: 50px;
+  width: 200px;
+}
