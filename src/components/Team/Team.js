@@ -7,7 +7,7 @@ export default {
   name: 'team',
     data() {
         return {
-            loading: false,
+            loading: true,
             selected: false,
             teams: this.getTeams(),
             team: [],
@@ -36,8 +36,7 @@ export default {
     },
 
     methods: {
-      getTeams(id) {
-        this.id = id;
+      getTeams() {
         this.loading = true;
         this.selected = true;
         const url = Vue.config.ApiUrl + '/team/all';

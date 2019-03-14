@@ -31,14 +31,14 @@ export default {
           label: 'N',
         },
       },
-      loading: false,
+      loading: true,
     };
   },
 
   methods: {
     getGroups() {
       const url = `${Vue.config.ApiUrl}/group/all`;
-
+      this.loading = true,
       axios.get(url)
         .then((response) => {
           this.groups = response.data;
@@ -48,7 +48,6 @@ export default {
 
     getTeamName(rankingId) {
       let name = '';
-
       this.allTeams.forEach((team) => {
         if (team.ranking !== undefined) {
           if (team.ranking.id === rankingId) {
@@ -61,7 +60,7 @@ export default {
 
     getTeams() {
       const url = `${Vue.config.ApiUrl}/team/all`;
-
+      this.loading = true,
       axios.get(url)
         .then((response) => {
           this.allTeams = response.data;

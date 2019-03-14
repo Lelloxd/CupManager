@@ -5,7 +5,7 @@ export default {
   name: 'matches',
     data() {
         return {
-            loading: false,
+            loading: true,
             fields: {
               homeTeam: {
                 label: 'Home Team'
@@ -27,8 +27,7 @@ export default {
         }
     },
     methods: {
-      getMatches(id) {
-        this.id = id;
+      getMatches() {
         this.loading = true;
         const url = Vue.config.ApiUrl + '/match/all/statistics';
         axios.get(url).then(response => {

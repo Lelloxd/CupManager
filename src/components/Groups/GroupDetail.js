@@ -6,7 +6,7 @@ export default {
     props: ["groupid"],
     data() {
         return {
-            loading: false,
+            loading: true,
             group: {},
             selectableTeams:[],
             allTeams:[],

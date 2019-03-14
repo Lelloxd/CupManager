@@ -17,7 +17,7 @@ export default {
           tdClass: 'rowStyle',
         },
       },
-      loading: false,
+      loading: true,
     };
   },
   methods: {

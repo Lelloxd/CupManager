@@ -4,7 +4,7 @@
       <div class="content" v-if="!loading">
         <div class="mt-5">
           <b-card>
-            <div v-if="!loading">
+            <div>
               <b-card-text>Partite</b-card-text>
               <div>
                 <b-table
@@ -27,14 +27,13 @@
                   >{{ data.item.completed ? 'Finita' : 'In corso' }}</template>
                 </b-table>
               </div>
-              <div class="loading" v-if="loading">
-                <span>LOADING</span>
-                <img src="../../assets/loader.svg">
-              </div>
             </div>
           </b-card>
         </div>
       </div>
+    </div>
+    <div class="loading" v-if="loading">
+      <b-spinner variant="primary" label="spinning"></b-spinner>
     </div>
   </div>
 </template>

@@ -5,7 +5,7 @@ export default {
   name: 'cards',
   data() {
     return {
-      loading: false,
+      loading: true,
       cards: this.getCards(),
       fields: {
         name: {
