@@ -1,10 +1,11 @@
 <template>
-  <div class="component h-100">
+  <div class="component min-h-100">
     <div class="col-md-6">
-     <div class="content" v-if="!loading">
-        <b-card class="mt-5">
-          <b-card-text>Gruppi</b-card-text>
-          <div>
+      <div class="content" v-if="!loading">
+        <div class="mt-5">
+          <b-card>
+            <b-card-text>Gruppi</b-card-text>
+
             <b-table
               class="mb-3"
               striped
@@ -15,22 +16,23 @@
               :select-mode="'single'"
               @row-selected="rowSelected"
             />
-          </div>
-          <a v-b-modal.modalNewGroup href="#" class="btn btn-warning mt-2 mb-3">Nuovo gruppo</a>
 
-          <!-- New Group -->
-          <b-modal id="modalNewGroup" hide-footer title="Nuovo Gruppo">
-            <group></group>
-          </b-modal>
-
-          <!-- Group Detail-->
-          <b-modal ref="modalGroupDetail" hide-footer hide-title>
-            <groupDetail v-if="selected" :groupid="groupId"></groupDetail>
-          </b-modal>
-
-        </b-card>
+            <b-button class="mb-3" v-b-modal.modalGroupNew variant="warning">Nuovo gruppo</b-button>
+          </b-card>
+        </div>
       </div>
     </div>
+
+    <!-- New Group Modal -->
+    <b-modal hide-footer id="modalGroupNew" ref="modalGroupNew" title="Nuovo Gruppo">
+      <modal-group-new></modal-group-new>
+    </b-modal>
+
+    <!-- Group Detail Modal -->
+    <b-modal hide-footer hide-title id="modalGroupDetails" ref="modalGroupDetails">
+      <modal-group-details :groupid="groupId"></modal-group-details>
+    </b-modal>
+
     <div class="loading" v-if="loading">
       <b-spinner variant="primary" label="spinning"></b-spinner>
     </div>

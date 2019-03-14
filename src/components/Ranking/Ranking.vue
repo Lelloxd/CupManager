@@ -1,5 +1,5 @@
 <template>
-  <div class="component h-100">
+  <div class="component min-h-100">
     <div class="col-md-6">
       <div class="content" v-if="!loading">
         <img src="~@/assets/logo.png">

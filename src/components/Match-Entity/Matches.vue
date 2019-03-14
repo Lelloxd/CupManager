@@ -1,5 +1,5 @@
 <template>
-  <div class="component h-100">
+  <div class="component min-h-100">
     <div class="col-md-8">
       <div class="content" v-if="!loading">
         <div class="mt-5">

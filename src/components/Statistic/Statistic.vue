@@ -1,5 +1,5 @@
 <template>
-  <div v-if="!loading" class="statistic h-100" :style="{'background-image': 'url(' + require('../../assets/sfondo.jpg') + ')'}">
+  <div v-if="!loading" class="statistic min-h-100" :style="{'background-image': 'url(' + require('../../assets/sfondo.jpg') + ')'}">
   <br>
     <div class="container col-11 data">
       <span style="color:white">

@@ -3,8 +3,6 @@ import Bests from '@/components/Bests/Bests';
 import Cards from '@/components/Cards/Cards';
 import Capocannoniere from '@/components/Capocannoniere/Capocannoniere';
 
-import Group from '@/components/Groups/Group';
-
 import Match from '@/components/Match-Entity/Match';
 import Matches from '@/components/Match-Entity/Matches';
 
@@ -39,11 +37,6 @@ export default new Router({
     path: '/cards',
     name: 'cards',
     component: Cards,
-  },
-  {
-    path: '/group',
-    name: 'group',
-    component: Group,
   },
   {
     path: '/match',
@@ -92,6 +85,6 @@ export default new Router({
   },
   {
     path: '/',
-    redirect: '/ranking'
-  },],
+    redirect: '/ranking',
+  }],
 });

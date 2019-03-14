@@ -5,7 +5,7 @@
     </div>
 
     <div class="app-content row">
-      <div class="h-100 w-100">
+      <div class="min-h-100 w-100">
         <router-view/>
       </div>
     </div>
@@ -22,8 +22,8 @@ import Bests from "./components/Bests/Bests.vue";
 import Capocannoniere from "./components/Capocannoniere/Capocannoniere.vue";
 import Cards from "./components/Cards/Cards.vue";
 
-import Group from "./components/Groups/Group.vue";
-import GroupDetail from "./components/Groups/GroupDetail.vue";
+import ModalGroupDetails from "./components/ModalGroupDetails/ModalGroupDetails.vue";
+import ModalGroupNew from "./components/ModalGroupNew/ModalGroupNew.vue";
 
 import Matches from "./components/Match-Entity/Matches.vue";
 import Match from "./components/Match-Entity/Match.vue";
@@ -49,10 +49,10 @@ export default {
     Capocannoniere,
     Cards,
 
-    Group,
-    GroupDetail,
-
     Matches,
+    ModalGroupDetails,
+    ModalGroupNew,
+
     Navbar,
     NewMatch,
     NewTeam,

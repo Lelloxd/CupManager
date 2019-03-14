@@ -1,7 +1,7 @@
 <template>
   <b-navbar class="w-100" toggleable="lg" type="dark" variant="info">
     <b-navbar-brand href="#">
-      <img alt="Rovarè Cup" class="navbar-logo" src="~@/assets/logo.png" />
+      <img alt="Rovarè Cup" class="navbar-logo" src="~@/assets/logo.png">
     </b-navbar-brand>
     <b-navbar-toggle target="nav_collapse"/>
     <b-collapse is-nav id="nav_collapse">
@@ -44,6 +44,6 @@
 }
 
 .bg-info {
-    background-color: #23406b!important;
+  background-color: #23406b !important;
 }
 </style>

@@ -3,9 +3,9 @@ import Vue from 'vue';
 
 export default {
   name: 'cards',
+
   data() {
     return {
-      loading: true,
       cards: this.getCards(),
       fields: {
         name: {
@@ -18,6 +18,7 @@ export default {
           label: 'Espulsioni',
         },
       },
+      loading: true,
     };
   },
   methods: {

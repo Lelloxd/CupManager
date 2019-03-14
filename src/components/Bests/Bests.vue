@@ -1,11 +1,12 @@
 <template>
-  <div class="component h-100">
+  <div class="component min-h-100">
     <div class="col-md-6">
       <div class="content" v-if="!loading">
         <img src="~@/assets/logo.png">
         <div class="mt-5">
           <b-card>
             <b-card-text>Miglior giocatore</b-card-text>
+
             <b-table class="mb-3" :small="true" striped hover :items="bests" :fields="fields">
               <template slot="name" slot-scope="data">{{ data.item[0] }} {{ data.item[1] }}</template>
               <template slot="best" slot-scope="data">{{ data.item[2] }}</template>

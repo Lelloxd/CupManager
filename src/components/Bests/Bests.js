@@ -20,6 +20,7 @@ export default {
       loading: true,
     };
   },
+
   methods: {
     getBests() {
       this.loading = true;

@@ -1,5 +1,5 @@
 <template>
-  <div class="component h-100">
+  <div class="component min-h-100">
     <div class="col-md-4">
       <div class="content">
         <b-card class="card-form">
