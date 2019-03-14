@@ -21,11 +21,9 @@
           </b-card>
         </div>
       </div>
-
-      <div class="loading" v-if="loading">
-        <span>LOADING</span>
-        <img src="~@/assets/loader.svg">
-      </div>
+    </div>
+    <div class="loading" v-if="loading">
+      <b-spinner variant="primary" label="spinning"></b-spinner>
     </div>
   </div>
 </template>

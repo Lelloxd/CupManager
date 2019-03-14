@@ -7,6 +7,7 @@
   background-size: cover;
   display: flex;
   justify-content: center;
+  position: relative;
 
   .content {
     margin-top: 3em;
@@ -44,5 +45,10 @@
 
   .row-style {
     width: 50%;
+  }
+
+  form {
+    padding: 1rem 2rem 1rem;
+    background: #efefef;
   }
 }
