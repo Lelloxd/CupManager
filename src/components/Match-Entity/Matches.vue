@@ -8,7 +8,7 @@
               <b-card-text>Partite</b-card-text>
               <div>
                 <b-table
-                  class="mt-3"
+                  class="mb-3"
                   striped
                   hover
                   selectable

@@ -8,7 +8,7 @@
             <b-card-text>Capocannoniere</b-card-text>
 
             <b-table
-              class="mt-3"
+              class="mb-3"
               :small="true"
               striped
               hover

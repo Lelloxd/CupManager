@@ -6,7 +6,7 @@
           <b-card-text>Gruppi</b-card-text>
           <div>
             <b-table
-              class="mt-3"
+              class="mb-3"
               striped
               hover
               :items="groups"
