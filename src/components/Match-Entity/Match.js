@@ -24,7 +24,7 @@ export default {
               { value: 0, text: 'Ammonizione' },
               { value: 1, text: 'Espulsione' },
             ],
-            loading: false,
+            loading: true,
             statisticMatch: this.getStatisticsMatch(),
             match: this.getMatch(),
             homeTeam: '',
