@@ -89,5 +89,9 @@ export default new Router({
     path: '/groups',
     name: 'groups',
     component: ViewGroups,
-  }],
+  },
+  {
+    path: '/',
+    redirect: '/ranking'
+  },],
 });
