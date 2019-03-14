@@ -42,4 +42,8 @@
   height: 32px;
   width: auto;
 }
+
+.bg-info {
+    background-color: #23406b!important;
+}
 </style>

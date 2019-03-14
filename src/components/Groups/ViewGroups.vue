@@ -16,7 +16,7 @@
               @row-selected="rowSelected"
             />
           </div>
-          <a v-b-modal.modalNewGroup href="#" class="btn btn-warning mt-2">Nuovo gruppo</a>
+          <a v-b-modal.modalNewGroup href="#" class="btn btn-warning mt-2 mb-3">Nuovo gruppo</a>
 
           <!-- New Group -->
           <b-modal id="modalNewGroup" hide-footer title="Nuovo Gruppo">

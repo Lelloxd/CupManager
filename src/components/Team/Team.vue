@@ -6,10 +6,11 @@
           <b-card>
             <b-card-text>SQUADRE</b-card-text>
             <p>Selezione la squadra</p>
-            <select v-model="team" @change="getTeam(team.id)">
-              <option v-for="team in teams" v-bind:key="team.id" v-bind:value="team">{{ team.name }}</option>
-            </select>
-
+            <div class="mb-3">
+              <select v-model="team" @change="getTeam(team.id)">
+                <option v-for="team in teams" v-bind:key="team.id" v-bind:value="team">{{ team.name }}</option>
+              </select>
+            </div>
             <b-table
               v-if="selected"
               :small="true"
@@ -43,7 +44,7 @@
               v-if="selected"
               v-b-modal.modal1
               href="#"
-              class="btn btn-warning mt-3"
+              class="btn btn-warning mt-3 mb-3"
             >Elimina Squadra</a>
           </b-card>
         </div>

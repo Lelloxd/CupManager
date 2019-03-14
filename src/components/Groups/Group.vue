@@ -1,5 +1,5 @@
 <template>
-  <div class="col-xs-12 col-sm-12 col-md-4 mx-auto">
+  <div class="col-xs-12 col-sm-12 col-md-6 mx-auto">
     <form v-if="!isSubmitted" @submit.prevent="submit" novalidate>
       <div class="form-group">
         <label for="name">Nome *</label>
