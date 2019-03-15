@@ -4,7 +4,7 @@
       <div class="content">
         <b-card class="card-form">
           <b-card-text>NUOVO GIOCATORE</b-card-text>
-          <form v-if="!isSubmitted && !loading" @submit.prevent="submit" novalidate>
+          <b-form class="form" v-if="!isSubmitted && !loading" @submit.prevent="submit" novalidate>
             <div class="form-group">
               <label for="name">Nome *</label>
               <input
@@ -89,7 +89,7 @@
                 <span v-else>Salva</span>
               </button>
             </div>
-          </form>
+          </b-form>
           <div v-if="isSubmitted">
             <div class="alert alert-success">
               <span>

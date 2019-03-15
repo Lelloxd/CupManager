@@ -1,6 +1,6 @@
 <template>
   <div>
-    <form v-if="!isSubmitted" @submit.prevent="submit" novalidate>
+    <b-form class="form" v-if="!isSubmitted" @submit.prevent="submit" novalidate>
       <div class="form-group">
         <label for="name">Nome *</label>
         <input
@@ -15,7 +15,7 @@
       </div>
 
       <div class="form-group">
-        <b-button variant="primary" :disabled="submitting">
+        <b-button :disabled="submitting" type="submit" variant="primary">
           <span v-if="submitting">
             <b-spinner small/>
             <span class="sr-only">Submitting</span>
@@ -23,7 +23,7 @@
           <span v-else>Salva</span>
         </b-button>
       </div>
-    </form>
+    </b-form>
 
     <div v-if="isSubmitted">
       <p class="alert alert-success">Aggiunto gruppo <b>{{ form.name }}</b></p>

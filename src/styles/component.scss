@@ -9,11 +9,6 @@
   justify-content: center;
   position: relative;
 
-  .content {
-    margin-bottom: 3em;
-    margin-top: 3em;
-  }
-
   .card {
     border: 0;
   }
@@ -28,14 +23,6 @@
     }
   }
 
-  .card-text {
-    background: $blue;
-    color: $white;
-    font-size: 20px;
-    font-weight: bold;
-    line-height: 35px;
-  }
-
   .card-form {
     background: $grey-light;
   }
@@ -44,12 +31,25 @@
     opacity: .9;
   }
 
-  .row-style {
-    width: 50%;
+  .card-text {
+    background: $blue;
+    color: $white;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 35px;
   }
 
-  form {
-    padding: 1rem 2rem 1rem;
-    background: #efefef;
+  .content {
+    margin-bottom: 3em;
+    margin-top: 3em;
+  }
+
+  .form {
+    background: $grey-light;
+    padding: 1em 2em;
+  }
+
+  .row-style {
+    width: 50%;
   }
 }

@@ -30,7 +30,7 @@ import Match from "./components/Match-Entity/Match.vue";
 
 import Navbar from "./components/Navbar/Navbar.vue";
 import NewMatch from "./components/NewMatch/NewMatch.vue";
-import NewTeam from "./components/Team/NewTeam.vue";
+import NewTeam from "./components/NewTeam/NewTeam.vue";
 
 import Ranking from "./components/Ranking/Ranking.vue";
 

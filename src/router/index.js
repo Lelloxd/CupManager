@@ -7,7 +7,7 @@ import Match from '@/components/Match-Entity/Match';
 import Matches from '@/components/Match-Entity/Matches';
 
 import NewMatch from '@/components/NewMatch/NewMatch';
-import NewTeam from '@/components/Team/NewTeam';
+import NewTeam from '@/components/NewTeam/NewTeam';
 
 import Ranking from '@/components/Ranking/Ranking';
 import Router from 'vue-router';
