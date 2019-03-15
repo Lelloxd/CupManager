@@ -14,15 +14,15 @@
         </b-nav-item-dropdown>
         <b-nav-item-dropdown text="Squadre" right>
           <b-dropdown-item router-link to="team">Squadre</b-dropdown-item>
-          <b-dropdown-item router-link to="nuovo-team">Nuovo team</b-dropdown-item>
-          <b-dropdown-item router-link to="nuovo-giocatore">Inserisci calciatori</b-dropdown-item>
+          <b-dropdown-item router-link to="nuovo-team">Nuova squadra</b-dropdown-item>
+          <b-dropdown-item router-link to="nuovo-giocatore">Nuovo giocatore</b-dropdown-item>
         </b-nav-item-dropdown>
         <b-nav-item-dropdown text="Gruppi" right>
-          <b-dropdown-item router-link to="groups">Gestisci Gruppi</b-dropdown-item>
+          <b-dropdown-item router-link to="groups">Gestisci gruppi</b-dropdown-item>
         </b-nav-item-dropdown>
         <b-nav-item-dropdown text="Partite" right>
           <b-dropdown-item router-link to="all-matches">Partite</b-dropdown-item>
-          <b-dropdown-item router-link to="newMatch">Crea una nuova partita</b-dropdown-item>
+          <b-dropdown-item router-link to="newMatch">Nuova partita</b-dropdown-item>
         </b-nav-item-dropdown>
       </b-navbar-nav>
     </b-collapse>

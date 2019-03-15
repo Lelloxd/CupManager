@@ -8,11 +8,11 @@
             <div class="form-group">
               <label for="date">Data partita *</label>
               <input
-                type="date"
+                @blur="onFieldBlur('date')"
                 class="form-control"
                 id="date"
+                type="date"
                 v-model.lazy.trim="form.date"
-                @blur="onFieldBlur('date')"
                 v-bind:class="getFieldClasses('date')"
               >
               <div v-if="isErrorField('date')" class="invalid-feedback">Campo data obbligatorio!</div>
@@ -77,21 +77,22 @@
             </div>
 
             <div class="form-group">
-              <button type="submit" class="btn btn-primary" :disabled="submitting">
+              <b-button :disabled="submitting" type="submit" variant="primary">
                 <span v-if="submitting">
-                  submitting
-                  <img src="../../assets/loader.svg">
+                  <b-spinner small/>
+                  <span class="sr-only">Submitting</span>
                 </span>
                 <span v-else>Salva</span>
-              </button>
+              </b-button>
             </div>
           </b-form>
+
           <div v-if="isSubmitted">
             <div class="alert alert-success">
               <span>
                 Partita creata
-                <b>{{form.guestTeam.name}}</b> vs
-                <b>{{form.homeTeam.name}}</b>
+                <b>{{ form.guestTeam.name }}</b> vs
+                <b>{{ form.homeTeam.name }}</b>
               </span>
             </div>
             <p class="text-center">

@@ -4,7 +4,7 @@ import Vue from 'vue';
 import { required } from 'vuelidate/lib/validators';
 
 export default {
-  name: 'newTeam',
+  name: 'newPlayer',
 
   data() {
     return {
@@ -13,8 +13,14 @@ export default {
       errorHeader: 'error.invalidFields',
       errors: [],
       submitting: false,
+      loading: true,
+      teams: this.getTeams(),
       form: {
         name: '',
+        surname: '',
+        birthOfDay: '',
+        numberOfMesh: 0,
+        team: null,
       },
     };
   },
@@ -51,6 +57,16 @@ export default {
       return {
         'is-invalid': this.isErrorField(field),
       };
+    },
+
+    getTeams() {
+      this.loading = true;
+      const url = `${Vue.config.ApiUrl}/team/all`;
+      axios.get(url)
+        .then((response) => {
+          this.teams = response.data;
+          this.loading = false;
+        });
     },
 
     getValidationField(field) {
@@ -96,7 +112,7 @@ export default {
 
     sendFormData() {
       this.enableSubmitLoader();
-      axios.post(`${Vue.config.ApiUrl}/team`, this.form)
+      axios.post(`${Vue.config.ApiUrl}/player`, this.form)
         .then((response) => {
           this.submitSuccess(response);
           this.disableSubmitLoader();
@@ -108,7 +124,6 @@ export default {
 
     submit() {
       this.$v.$touch();
-
       if (!this.$v.$error) {
         this.sendFormData();
       } else {
@@ -146,6 +161,18 @@ export default {
   validations: {
     form: {
       name: {
+        required,
+      },
+      surname: {
+        required,
+      },
+      birthOfDay: {
+        required,
+      },
+      numberOfMesh: {
+        required,
+      },
+      team: {
         required,
       },
     },

@@ -2,21 +2,28 @@
   <div class="component min-h-100">
     <div class="col-md-6" v-if="!loading">
       <div class="content">
-        <img src="~@/assets/logo.png">
         <div class="mt-5">
           <b-card>
-            <b-card-text>Capocannoniere</b-card-text>
+            <b-card-text>Partite</b-card-text>
 
             <b-table
               class="mb-3"
-              :small="true"
               striped
               hover
-              :items="capocannoniere"
+              selectable
+              :select-mode="'single'"
+              :items="matches"
               :fields="fields"
+              @row-selected="rowSelected"
             >
-              <template slot="name" slot-scope="data">{{ data.item[0] }} {{ data.item[1] }}</template>
-              <template slot="gol" slot-scope="data">{{ data.item[2] }}</template>
+              <template
+                slot="risultato"
+                slot-scope="data"
+              >{{ data.item.homeResult }} - {{ data.item.guestResult }}</template>
+              <template
+                slot="stato"
+                slot-scope="data"
+              >{{ data.item.completed ? 'Finita' : 'In corso' }}</template>
             </b-table>
           </b-card>
         </div>
@@ -28,6 +35,5 @@
   </div>
 </template>
 
-<script src="./Capocannoniere.js"></script>
+<script src="./Matches.js"></script>
 <style src="../../styles/component.scss" lang="scss"></style>
-

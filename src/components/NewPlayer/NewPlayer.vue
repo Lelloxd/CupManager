@@ -3,20 +3,21 @@
     <div class="col-md-4">
       <div class="content">
         <b-card class="card-form">
-          <b-card-text>NUOVO GIOCATORE</b-card-text>
+          <b-card-text>Nuovo giocatore</b-card-text>
           <b-form class="form" v-if="!isSubmitted && !loading" @submit.prevent="submit" novalidate>
             <div class="form-group">
               <label for="name">Nome *</label>
               <input
-                type="text"
+                @blur="onFieldBlur('name')"
                 class="form-control"
                 id="name"
+                type="text"
                 v-model.lazy.trim="form.name"
-                @blur="onFieldBlur('name')"
                 v-bind:class="getFieldClasses('name')"
               >
-              <div v-if="isErrorField('name')" class="invalid-feedback">Campo Nome obbligatorio!</div>
+              <div v-if="isErrorField('name')" class="invalid-feedback">Campo nome obbligatorio!</div>
             </div>
+
             <div class="form-group">
               <label for="surname">Cognome *</label>
               <input
@@ -32,6 +33,7 @@
                 class="invalid-feedback"
               >Campo Cognome obbligatorio!</div>
             </div>
+
             <div class="form-group">
               <label for="birthOfDay">Data di nascita *</label>
               <input
@@ -47,6 +49,7 @@
                 class="invalid-feedback"
               >Campo data di nascita obbligatorio!</div>
             </div>
+
             <div class="form-group">
               <label for="numberOfMesh">Numero maglia *</label>
               <input
@@ -62,6 +65,7 @@
                 class="invalid-feedback"
               >Campo numero maglia obbligatorio!</div>
             </div>
+
             <div class="form-group">
               <label for="team">Team *</label>
               <select
@@ -81,21 +85,22 @@
             </div>
 
             <div class="form-group">
-              <button type="submit" class="btn btn-primary" :disabled="submitting">
+              <b-button :disabled="submitting" type="submit" variant="primary">
                 <span v-if="submitting">
-                  submitting
-                  <img src="../../assets/loader.svg">
+                  <b-spinner small/>
+                  <span class="sr-only">Submitting</span>
                 </span>
                 <span v-else>Salva</span>
-              </button>
+              </b-button>
             </div>
           </b-form>
+
           <div v-if="isSubmitted">
             <div class="alert alert-success">
               <span>
                 Aggiunto giocatore
-                <b>{{form.name}} {{form.surname}}</b> del team
-                <b>{{form.team.name}}</b>
+                <b>{{ form.name }} {{ form.surname }}</b> del team
+                <b>{{ form.team.name }}</b>
               </span>
             </div>
             <p class="text-center">
@@ -105,12 +110,13 @@
         </b-card>
       </div>
     </div>
+
     <div class="loading" v-if="loading">
       <b-spinner variant="primary" label="spinning"></b-spinner>
     </div>
   </div>
 </template>
 
-<script src="./TeamReg.js"></script>
+<script src="./NewPlayer.js"></script>
 <style src="../../styles/component.scss" lang="scss"></style>
 

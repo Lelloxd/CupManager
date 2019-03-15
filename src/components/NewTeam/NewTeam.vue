@@ -32,7 +32,8 @@
             </b-form>
 
             <div v-if="isSubmitted">
-              <p class="alert alert-success">Aggiunto squadra
+              <p class="alert alert-success">
+                Aggiunto squadra
                 <b>{{ form.name }}</b>
               </p>
               <p class="text-center">

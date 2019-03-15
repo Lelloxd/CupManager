@@ -3,10 +3,11 @@ import Bests from '@/components/Bests/Bests';
 import Cards from '@/components/Cards/Cards';
 import Capocannoniere from '@/components/Capocannoniere/Capocannoniere';
 
-import Match from '@/components/Match-Entity/Match';
-import Matches from '@/components/Match-Entity/Matches';
+import Match from '@/components/Match/Match';
+import Matches from '@/components/Matches/Matches';
 
 import NewMatch from '@/components/NewMatch/NewMatch';
+import NewPlayer from '@/components/NewPlayer/NewPlayer';
 import NewTeam from '@/components/NewTeam/NewTeam';
 
 import Ranking from '@/components/Ranking/Ranking';
@@ -15,7 +16,6 @@ import Router from 'vue-router';
 import Statistic from '@/components/Statistic/Statistic';
 
 import Team from '@/components/Team/Team';
-import TeamReg from '@/components/Regs/TeamReg';
 
 import ViewGroups from '@/components/Groups/ViewGroups';
 import Vue from 'vue';
@@ -54,6 +54,11 @@ export default new Router({
     component: NewMatch,
   },
   {
+    path: '/nuovo-giocatore',
+    name: 'newPlayer',
+    component: NewPlayer,
+  },
+  {
     path: '/nuovo-team',
     name: 'newTeam',
     component: NewTeam,
@@ -62,11 +67,6 @@ export default new Router({
     path: '/team',
     name: 'team',
     component: Team,
-  },
-  {
-    path: '/nuovo-giocatore',
-    name: 'team-reg',
-    component: TeamReg,
   },
   {
     path: '/ranking',

@@ -25,11 +25,12 @@ import Cards from "./components/Cards/Cards.vue";
 import ModalGroupDetails from "./components/ModalGroupDetails/ModalGroupDetails.vue";
 import ModalGroupNew from "./components/ModalGroupNew/ModalGroupNew.vue";
 
-import Matches from "./components/Match-Entity/Matches.vue";
-import Match from "./components/Match-Entity/Match.vue";
+import Match from "./components/Match/Match.vue";
+import Matches from "./components/Matches/Matches.vue";
 
 import Navbar from "./components/Navbar/Navbar.vue";
 import NewMatch from "./components/NewMatch/NewMatch.vue";
+import NewPlayer from "./components/NewPlayer/NewPlayer.vue";
 import NewTeam from "./components/NewTeam/NewTeam.vue";
 
 import Ranking from "./components/Ranking/Ranking.vue";
@@ -37,7 +38,6 @@ import Ranking from "./components/Ranking/Ranking.vue";
 import Statistic from "./components/Statistic/Statistic.vue";
 
 import Team from "./components/Team/Team.vue";
-import TeamReg from "./components/Regs/TeamReg.vue";
 
 import ViewGroups from "./components/Groups/ViewGroups.vue";
 
@@ -55,6 +55,7 @@ export default {
 
     Navbar,
     NewMatch,
+    NewPlayer,
     NewTeam,
 
     Ranking,
@@ -62,7 +63,6 @@ export default {
     Statistic,
 
     Team,
-    TeamReg,
 
     ViewGroups,
   }
