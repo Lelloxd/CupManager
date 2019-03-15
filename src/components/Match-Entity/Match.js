@@ -159,7 +159,7 @@ export default {
         });
       },
       deleteMatch(){
-        axios.put(Vue.config.ApiUrl + "/ranking/reopenMatch?matchId="+this.match.id).then(response => {
+        axios.put(Vue.config.ApiUrl + "/ranking/deleteMatch?matchId="+this.match.id).then(response => {
           axios.delete(Vue.config.ApiUrl + "/match?id="+ this.match.id).then(response => {
             this.$router.push({ name: 'all-matches' })
           }).catch(error => {
