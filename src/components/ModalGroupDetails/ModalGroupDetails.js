@@ -87,9 +87,11 @@ export default {
         });
     },
     getTeamName(rankingId) {
+      console.log(rankingId);
+      console.log(this.allTeams);
       let name = '';
       this.allTeams.forEach((team) => {
-        if (team.ranking !== undefined) {
+        if (team.ranking !== null && team.ranking !== undefined) {
           if (team.ranking.id === rankingId) {
             name = team.name;
           }
