@@ -3,7 +3,7 @@
   <br>
     <div class="container col-11 data detail-row">
       <span>
-        {{statisticMatch.date}} <img class= "ml-2 icon" src="../../assets/whistle.png"/>  {{statisticMatch.referee}} <img class= "ml-2 icon"  src="../../assets/stadium.png"/> Rovarè Stadium
+        {{statisticMatch.date}} - {{matchType}}<img class= "ml-2 icon" src="../../assets/whistle.png"/>  {{statisticMatch.referee}} <img class= "ml-2 icon"  src="../../assets/stadium.png"/> Rovarè Stadium
       </span>
     </div>
     <br>

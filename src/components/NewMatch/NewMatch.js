@@ -16,11 +16,21 @@ export default {
         referee: '',
         completed: false,
         date: '',
+        matchType: '',
+        group: null
       },
       isError: false,
       isSubmitted: false,
       submitting: false,
       teams: this.getTeams(),
+      groups: this.getGroups(),
+      matchTypes: [
+        { value: 'Gruppo', text: 'Gruppo' },
+        { value: 'Semifinale_Rovare_Cup', text: 'Semifinale Rovarè Cup' },
+        { value: 'Finale_Rovare_Cup', text: 'Finale Rovarè Cup' },
+        { value: 'Semifinale_Euro_Cup', text: 'Semifinale Euro Cup' },
+        { value: 'Finale_Euro_Cup', text: 'Finale Euro Cup' }
+      ]
     };
   },
   methods: {
@@ -82,6 +92,15 @@ export default {
       this.isError = true;
     },
 
+    getGroups() {
+      const url = `${Vue.config.ApiUrl}/group/all`;
+      this.loading = true;
+
+      axios.get(url).then((response) => {
+        this.groups = response.data;
+        this.loading = false;
+      });
+    },
     getErrors() {
       const errors = [];
 
@@ -116,6 +135,9 @@ export default {
         this.loading = false;
       });
     },
+
+
+
 
     getValidationField(field) {
       if (this.$v.form[field]) {
@@ -173,6 +195,9 @@ export default {
       referee: {
         required,
       },
+      matchType: {
+        required
+      }
     },
   },
 

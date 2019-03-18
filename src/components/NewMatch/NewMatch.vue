@@ -77,6 +77,32 @@
             </div>
 
             <div class="form-group">
+              <label for="matchType">Tipo di match *</label>
+              <b-form-select v-model="form.matchType" :options="matchTypes" @blur="onFieldBlur('matchType')"
+                v-bind:class="getFieldClasses('matchType')"/>
+              <div
+                v-if="isErrorField('matchType')"
+                class="invalid-feedback"
+              >Tipo di match obbligatorio!</div>
+            </div>
+
+            <div class="form-group" v-if="form.matchType == 'Gruppo'">
+              <label for="groups">Gruppo</label>
+              <select
+                id="group"
+                class="form-control"
+                v-model="form.group"
+                @blur="onFieldBlur('group')"
+              >
+                <option
+                  v-for="group in groups"
+                  v-bind:key="group.id"
+                  v-bind:value="group"
+                >{{ group.name }}</option>
+              </select>
+            </div>
+
+            <div class="form-group">
               <b-button :disabled="submitting" type="submit" variant="primary">
                 <span v-if="submitting">
                   <b-spinner small/>

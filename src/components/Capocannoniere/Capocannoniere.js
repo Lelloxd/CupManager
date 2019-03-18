@@ -9,11 +9,11 @@ export default {
       capocannoniere: this.getCapocannoniere(),
       fields: {
         name: {
-          label: 'Nome',
+          label: 'Giocatore',
           tdClass: 'rowStyle',
         },
         gol: {
-          label: 'Gol',
+          label: 'Gol fatti',
           tdClass: 'rowStyle',
         },
       },

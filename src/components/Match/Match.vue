@@ -170,27 +170,26 @@
               </div>
             </div>
 
-            <b-button class="mb-3" v-b-modal.modalDelete href="#" variant="warning">Elimina</b-button>
-            <b-button
-              class="mb-3"
-              v-if="!isCompleted"
-              v-b-modal.modalCompleted
-              href="#"
-              variant="warning"
-            >Finita</b-button>
-            <b-button
-              class="mb-3"
-              v-if="isCompleted"
-              v-b-modal.modalCompleted
-              href="#"
-              variant="warning"
-            >Ri-apri</b-button>
-            <b-button
-              class="mb-3"
-              v-if="isCompleted"
-              @click="getStatistic()"
-              variant="warning"
-            >Genera statistiche</b-button>
+            <div class="mb-3 mt-3">
+              <b-button v-b-modal.modalDelete href="#" variant="warning">Elimina</b-button>
+              <b-button
+                v-if="!isCompleted"
+                v-b-modal.modalCompleted
+                href="#"
+                variant="warning"
+              >Finita</b-button>
+              <b-button
+                v-if="isCompleted"
+                v-b-modal.modalCompleted
+                href="#"
+                variant="warning"
+              >Ri-apri</b-button>
+              <b-button
+                v-if="isCompleted"
+                @click="getStatistic()"
+                variant="warning"
+              >Genera statistiche</b-button>
+            </div>
           </b-card>
         </div>
 

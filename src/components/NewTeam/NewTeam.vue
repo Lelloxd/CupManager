@@ -1,6 +1,6 @@
 <template>
   <div class="component min-h-100">
-    <div class="col-md-6">
+    <div class="col-md-4">
       <div class="content">
         <div>
           <b-card class="card-form">

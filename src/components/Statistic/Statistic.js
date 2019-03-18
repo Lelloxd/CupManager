@@ -32,7 +32,8 @@ export default {
             totalYellowGuest: 0,
             totalRedGuest: 0,
             mapGoalHome: new Map(),
-            mapGoalGuest: new Map()
+            mapGoalGuest: new Map(),
+            matchType: ''
         }
     },
     methods: {
@@ -84,6 +85,11 @@ export default {
               }
               this.mapGoalGuest.set(key,result);
             });
+            if(this.statisticMatch.matchType === 'Gruppo'){
+              this.matchType = this.statisticMatch.group.name;
+            } else {
+              this.matchType = this.statisticMatch.matchType;
+            }
 
             this.loading = false;
         })

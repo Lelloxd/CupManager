@@ -6,8 +6,8 @@ export default {
 
   data() {
     return {
-      allTeams: this.getTeams(),
-      groups: this.getGroups(),
+      allTeams: [],
+      groups: [],
       fields: {
         team: {
           label: 'Squadra',
@@ -46,6 +46,17 @@ export default {
         });
     },
 
+    getRankings(groupId) {
+      console.log(groupId)
+      // const url = `${Vue.config.ApiUrl}/group/rankings?groupId=${groupId}`;
+      // this.loading = true,
+      // axios.get(url)
+      //   .then((response) => {
+      //     this.loading = false;
+      //     return response.data;
+      //   });
+    },
+
     getTeamName(rankingId) {
       let name = '';
       this.allTeams.forEach((team) => {
@@ -68,4 +79,9 @@ export default {
         });
     },
   },
+
+  mounted: function() {
+    this.getGroups();
+    this.getTeams();
+  }
 };

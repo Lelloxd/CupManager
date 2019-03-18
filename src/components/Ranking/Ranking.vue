@@ -13,7 +13,7 @@
               :small="true"
               striped
               hover
-              :items="group.rankings"
+              :items="getRankings(group.id)"
               :fields="fields"
             >
               <template slot="team" slot-scope="data">{{ getTeamName(data.item.id) }}</template>
