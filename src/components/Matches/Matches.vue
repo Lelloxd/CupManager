@@ -2,7 +2,7 @@
   <div class="component min-h-100">
     <div class="col-md-6" v-if="!loading">
       <div class="content">
-        <div class="mt-5">
+        <div class="mt-5" v-if="matches.length > 0">
           <b-card>
             <b-card-text>Partite</b-card-text>
 
@@ -25,6 +25,12 @@
                 slot-scope="data"
               >{{ data.item.completed ? 'Finita' : 'In corso' }}</template>
             </b-table>
+          </b-card>
+        </div>
+        <div class="mt-5" v-else>
+          <b-card-text>Partite</b-card-text>
+          <b-card>
+            <p> Nessuna partita presente</p>
           </b-card>
         </div>
       </div>

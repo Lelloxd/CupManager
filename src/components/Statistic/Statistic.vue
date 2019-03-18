@@ -1,13 +1,13 @@
 <template>
-  <div v-if="!loading" class="statistic min-h-100" :style="{'background-image': 'url(' + require('../../assets/sfondo.jpg') + ')'}">
+  <div v-if="!loading" class="statistic min-h-100">
   <br>
-    <div class="container col-11 data">
-      <span style="color:white">
+    <div class="container col-11 data detail-row">
+      <span>
         {{statisticMatch.date}} <img class= "ml-2 icon" src="../../assets/whistle.png"/>  {{statisticMatch.referee}} <img class= "ml-2 icon"  src="../../assets/stadium.png"/> Rovarè Stadium
       </span>
     </div>
     <br>
-    <img class="text-center mt-2" src="../../assets/LOGO_TORNEO.png" style="margin-top:20px">
+    <img src="~@/assets/logo.png">
     <div class="container col-12 father">
       <div class="container col-10 mt-4">
         <div class="row risultato">
@@ -187,63 +187,5 @@
 </template>
 
 <script src="./Statistic.js"></script>
-
-<style>
-.team-name{
-  font-size: 30px;
-}
-.statistic{
-  background-color: black;
-  margin-top: -40px;
-}
-.inLine{
-  display: inline-block
-}
-.data{
-   background-color:rgba(56, 0, 60, 0.5);
-   text-align: left
-}
-.risultato{
-  color:white;
-  height: 100%;
-  background-color:rgb(56, 0, 60);
-  text-align: center
-}
-.father{
-  background-color: rgba(56, 0, 60, 0.5);
-  text-align: center;
-}
-.vl {
-  border-left: 1px dotted white;
-  height: 100%;
-  position: absolute;
-  left: 50%;
-  }
-.card{
-  opacity:0.9;
-}
-.card-body {
-  padding:  0px;
-}
-.table{
-  margin-bottom: 0px;
-}
-.table th{
-  border-top: 0px
-}
-.progress{
-  background-color: rgb(77, 77, 247)
-}
-.bg-primary {
-    background-color: rgb(231, 77, 77) !important;
-}
-.icon{
-  width: auto;
-  height: 18px;
-}
-.icon2{
-  width: auto;
-  height: 20px;
-}
-</style>
+<style src="./Statistic.scss" lang="scss"></style>
 

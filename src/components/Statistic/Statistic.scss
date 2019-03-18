@@ -1,0 +1,62 @@
+.team-name{
+  font-size: 30px;
+}
+.statistic{
+  background-image: url('~@/assets/background.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.inLine{
+  display: inline-block
+}
+.data{
+   background-color:rgba(56, 0, 60, 0.5);
+   text-align: left
+}
+.risultato{
+  color:white;
+  height: 100%;
+  background-color:rgb(56, 0, 60);
+  text-align: center
+}
+.father{
+  background-color: rgba(56, 0, 60, 0.5);
+  text-align: center;
+}
+.vl {
+  border-left: 1px dotted white;
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  }
+.card{
+  opacity:0.9;
+}
+.card-body {
+  padding:  0px;
+}
+.table{
+  margin-bottom: 0px;
+}
+.table th{
+  border-top: 0px
+}
+.progress{
+  background-color: rgb(77, 77, 247)
+}
+.bg-primary {
+    background-color: rgb(231, 77, 77) !important;
+}
+.icon{
+  width: auto;
+  height: 18px;
+}
+.icon2{
+  width: auto;
+  height: 20px;
+}
+.detail-row{
+  color: white;
+  opacity: .8;
+  font-size: 13px
+}

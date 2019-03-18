@@ -137,7 +137,7 @@ export default {
       this.goal.match = this.match;
       this.goal.player = player;
       this.goal.minute = this.minute;
-      axios.post(`${Vue.config.ApiUrl}/gol'`, this.goal)
+      axios.post(`${Vue.config.ApiUrl}/gol`, this.goal)
         .then(() => {
           this.goal = {};
           this.minute = 0;
@@ -221,7 +221,7 @@ export default {
     },
 
     deleteMatch() {
-      axios.put(`${Vue.config.ApiUrl}/ranking/reopenMatch?matchId=${this.match.id}`)
+      axios.put(`${Vue.config.ApiUrl}/ranking/deleteMatch?matchId=${this.match.id}`)
         .then(() => {
           axios.delete(`${Vue.config.ApiUrl}/match?id=${this.match.id}`)
             .then(() => {

@@ -2,7 +2,7 @@
   <div class="component min-h-100">
     <div class="col-md-6" v-if="!loading">
       <div class="content">
-        <div class="mt-5">
+        <div class="mt-5" v-if="groups.length > 0">
           <b-card>
             <b-card-text>Gruppi</b-card-text>
 
@@ -17,6 +17,13 @@
               @row-selected="rowSelected"
             />
 
+            <b-button class="mb-3" v-b-modal.modalGroupNew variant="warning">Nuovo gruppo</b-button>
+          </b-card>
+        </div>
+        <div class="mt-5" v-else>
+          <b-card-text>Gruppi</b-card-text>
+          <b-card>
+            <p> Nessuna gruppo presente</p>
             <b-button class="mb-3" v-b-modal.modalGroupNew variant="warning">Nuovo gruppo</b-button>
           </b-card>
         </div>

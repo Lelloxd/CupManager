@@ -1,6 +1,6 @@
 <template>
   <div class="component min-h-100">
-    <div class="col-md-6" v-if="!loading">
+    <div class="col-md-8" v-if="!loading">
       <div class="content">
         <div class="mt-5">
           <b-card>
@@ -170,24 +170,27 @@
               </div>
             </div>
 
-            <a v-b-modal.modalDelete href="#" class="btn btn-warning mt-5">Elimina</a>
-            <a
+            <b-button class="mb-3" v-b-modal.modalDelete href="#" variant="warning">Elimina</b-button>
+            <b-button
+              class="mb-3"
               v-if="!isCompleted"
               v-b-modal.modalCompleted
               href="#"
-              class="btn btn-warning mt-5"
-            >Finita</a>
-            <a
+              variant="warning"
+            >Finita</b-button>
+            <b-button
+              class="mb-3"
               v-if="isCompleted"
               v-b-modal.modalCompleted
               href="#"
-              class="btn btn-warning mt-5"
-            >Ri-apri</a>
-            <a
+              variant="warning"
+            >Ri-apri</b-button>
+            <b-button
+              class="mb-3"
               v-if="isCompleted"
               @click="getStatistic()"
-              class="btn btn-warning mt-5"
-            >Genera statistiche</a>
+              variant="warning"
+            >Genera statistiche</b-button>
           </b-card>
         </div>
 
