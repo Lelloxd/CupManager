@@ -12,7 +12,7 @@ export default {
   data() {
     return {
       loading: false,
-      groups: this.getGroups(),
+      groups: [],
       selected: false,
       groupId: '',
       fields: {
@@ -38,4 +38,7 @@ export default {
       this.$refs.modalGroupDetails.show();
     },
   },
+  mounted: function() {
+    this.getGroups();
+  }
 };

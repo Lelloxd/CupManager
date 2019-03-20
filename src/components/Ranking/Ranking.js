@@ -8,6 +8,7 @@ export default {
     return {
       allTeams: [],
       groups: [],
+      rankings: new Map(),
       fields: {
         team: {
           label: 'Squadra',
@@ -42,19 +43,30 @@ export default {
       axios.get(url)
         .then((response) => {
           this.groups = response.data;
-          this.loading = false;
+          this.setRankings();
         });
     },
 
-    getRankings(groupId) {
-      console.log(groupId)
-      // const url = `${Vue.config.ApiUrl}/group/rankings?groupId=${groupId}`;
-      // this.loading = true,
-      // axios.get(url)
-      //   .then((response) => {
-      //     this.loading = false;
-      //     return response.data;
-      //   });
+    setRankings() {
+      this.loading = true;
+
+      const ids = [];
+      const promises = [];
+
+      this.groups.forEach(element => {
+        const url = `${Vue.config.ApiUrl}/group/rankings?groupId=${element.id}`;
+        ids.push(element.id);
+        promises.push(axios.get(url));
+      });
+
+      Promise.all(promises)
+        .then((responses) => {
+          responses.forEach((response, index) => {
+            this.rankings.set(ids[index],response.data);
+
+          });
+          this.loading = false;
+        });
     },
 
     getTeamName(rankingId) {
@@ -70,18 +82,19 @@ export default {
     },
 
     getTeams() {
+      this.loading = true;
       const url = `${Vue.config.ApiUrl}/team/all`;
-      this.loading = true,
-      axios.get(url)
+      return axios.get(url)
         .then((response) => {
           this.allTeams = response.data;
-          this.loading = false;
         });
     },
   },
 
   mounted: function() {
-    this.getGroups();
-    this.getTeams();
+    this.getTeams()
+      .then(() => {
+        this.getGroups();
+      })
   }
 };

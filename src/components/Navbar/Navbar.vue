@@ -12,6 +12,10 @@
           <b-dropdown-item router-link to="/best">Miglior giocatore</b-dropdown-item>
           <b-dropdown-item router-link to="/cards">Cartellini</b-dropdown-item>
         </b-nav-item-dropdown>
+        <b-nav-item-dropdown text="Fase Finale" right>
+           <b-dropdown-item router-link to="/final-phase?type=rovare_cup">Fase Finale Rovarè Cup</b-dropdown-item>
+           <b-dropdown-item router-link to="/final-phase?type=euro_cup">Fase Finale Euro Cup</b-dropdown-item>
+        </b-nav-item-dropdown>
         <b-nav-item-dropdown text="Squadre" right>
           <b-dropdown-item router-link to="team">Squadre</b-dropdown-item>
           <b-dropdown-item router-link to="nuovo-team">Nuova squadra</b-dropdown-item>

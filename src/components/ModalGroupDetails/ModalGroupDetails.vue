@@ -2,7 +2,7 @@
   <div>
     <div v-if="!loading">
       <p>{{ group.name }}</p>
-      <b-table class="mt-3" striped hover :items="group.rankings" :fields="fields">
+      <b-table class="mt-3" striped hover :items="rankings" :fields="fields">
         <template slot="team" slot-scope="data">{{getTeamName(data.item.id)}}</template>
         <template slot="action" slot-scope="data">
           <a class="btn btn-danger btn-sm" @click="deleteRanking(data.item.id)">Elimina</a>

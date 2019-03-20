@@ -22,6 +22,8 @@ import Bests from "./components/Bests/Bests.vue";
 import Capocannoniere from "./components/Capocannoniere/Capocannoniere.vue";
 import Cards from "./components/Cards/Cards.vue";
 
+import FinalPhase from "./components/FinalPhase/FinalPhase.vue"
+
 import ModalGroupDetails from "./components/ModalGroupDetails/ModalGroupDetails.vue";
 import ModalGroupNew from "./components/ModalGroupNew/ModalGroupNew.vue";
 
@@ -48,6 +50,8 @@ export default {
 
     Capocannoniere,
     Cards,
+
+    FinalPhase,
 
     Matches,
     ModalGroupDetails,

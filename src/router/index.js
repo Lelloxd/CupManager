@@ -3,6 +3,8 @@ import Bests from '@/components/Bests/Bests';
 import Cards from '@/components/Cards/Cards';
 import Capocannoniere from '@/components/Capocannoniere/Capocannoniere';
 
+import FinalPhase from '@/components/FinalPhase/FinalPhase';
+
 import Match from '@/components/Match/Match';
 import Matches from '@/components/Matches/Matches';
 
@@ -82,6 +84,11 @@ export default new Router({
     path: '/groups',
     name: 'groups',
     component: ViewGroups,
+  },
+  {
+    path: '/final-phase',
+    name: 'finalPhase',
+    component: FinalPhase,
   },
   {
     path: '/',
