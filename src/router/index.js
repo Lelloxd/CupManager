@@ -5,6 +5,8 @@ import Capocannoniere from '@/components/Capocannoniere/Capocannoniere';
 
 import FinalPhase from '@/components/FinalPhase/FinalPhase';
 
+import Login from '@/components/Login/Login';
+
 import Match from '@/components/Match/Match';
 import Matches from '@/components/Matches/Matches';
 
@@ -24,7 +26,7 @@ import Vue from 'vue';
 
 Vue.use(Router);
 
-export default new Router({
+let router = new Router({
   routes: [{
     path: '/best',
     name: 'best',
@@ -54,16 +56,25 @@ export default new Router({
     path: '/newMatch',
     name: 'newMatch',
     component: NewMatch,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/nuovo-giocatore',
     name: 'newPlayer',
     component: NewPlayer,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/nuovo-team',
     name: 'newTeam',
     component: NewTeam,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/team',
@@ -84,6 +95,9 @@ export default new Router({
     path: '/groups',
     name: 'groups',
     component: ViewGroups,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/final-phase',
@@ -93,5 +107,25 @@ export default new Router({
   {
     path: '/',
     redirect: '/ranking',
+  },
+  ,
+  {
+    path: '/login',
+    name: 'login',
+    component: Login,
   }],
 });
+
+router.beforeEach((to, from, next) => {
+  if(to.matched.some(record => record.meta.requiresAuth)) {
+    if (sessionStorage.getItem('token') != undefined || sessionStorage.getItem('token') != null) {
+      next()
+      return
+    }
+    next('/login')
+  } else {
+    next()
+  }
+})
+
+export default router

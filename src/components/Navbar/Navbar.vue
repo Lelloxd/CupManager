@@ -16,18 +16,20 @@
            <b-dropdown-item router-link to="/final-phase?type=rovare_cup">Fase Finale Rovarè Cup</b-dropdown-item>
            <b-dropdown-item router-link to="/final-phase?type=euro_cup">Fase Finale Euro Cup</b-dropdown-item>
         </b-nav-item-dropdown>
-        <b-nav-item-dropdown text="Squadre" right>
+        <b-nav-item-dropdown v-if="status.loggedIn" text="Squadre" right>
           <b-dropdown-item router-link to="team">Squadre</b-dropdown-item>
           <b-dropdown-item router-link to="nuovo-team">Nuova squadra</b-dropdown-item>
           <b-dropdown-item router-link to="nuovo-giocatore">Nuovo giocatore</b-dropdown-item>
         </b-nav-item-dropdown>
-        <b-nav-item-dropdown text="Gruppi" right>
+        <b-nav-item-dropdown v-if="status.loggedIn" text="Gruppi" right>
           <b-dropdown-item router-link to="groups">Gestisci gruppi</b-dropdown-item>
         </b-nav-item-dropdown>
-        <b-nav-item-dropdown text="Partite" right>
+        <b-nav-item-dropdown v-if="status.loggedIn" text="Partite" right>
           <b-dropdown-item router-link to="all-matches">Partite</b-dropdown-item>
           <b-dropdown-item router-link to="newMatch">Nuova partita</b-dropdown-item>
         </b-nav-item-dropdown>
+        <b-nav-item  v-else router-link to="all-matches">Partite</b-nav-item>
+        <b-nav-item v-if="status.loggedIn" @click=handleSubmit>Logout</b-nav-item>
       </b-navbar-nav>
     </b-collapse>
   </b-navbar>
@@ -51,3 +53,6 @@
   background-color: #23406b !important;
 }
 </style>
+
+<script src="./Navbar.js"></script>
+

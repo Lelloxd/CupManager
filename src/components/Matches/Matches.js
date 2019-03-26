@@ -1,5 +1,6 @@
 import axios from 'axios';
 import Vue from 'vue';
+import {mapState, mapActions} from 'vuex'
 
 export default {
   name: 'matches',
@@ -38,7 +39,9 @@ export default {
   },
 
   computed: {
+    ...mapState('account', ['status']),
     items () {
+
       if (this.groups.includes(this.filter)){
         return this.matches.filter(item => (item.group != null && item.group.name === this.filter))
       } else{
@@ -79,12 +82,22 @@ export default {
     },
 
     rowSelected(item) {
-      this.$router.push({
-        name: 'match',
-        query: {
-          id: item[0].matchId,
-        },
-      });
+      console.log(this.status.loggedIn)
+      if(this.status.loggedIn){
+        this.$router.push({
+          name: 'match',
+          query: {
+            id: item[0].matchId,
+          },
+        });
+      }else{
+        this.$router.push({
+          name: 'statistic',
+          query: {
+            id: item[0].matchId,
+          },
+        });
+      }
     },
   },
 

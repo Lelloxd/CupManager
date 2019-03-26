@@ -17,6 +17,8 @@ import moment from "moment";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
 
+import VueResource from 'vue-resource';
+
 import Bests from "./components/Bests/Bests.vue";
 
 import Capocannoniere from "./components/Capocannoniere/Capocannoniere.vue";
@@ -26,6 +28,8 @@ import FinalPhase from "./components/FinalPhase/FinalPhase.vue"
 
 import ModalGroupDetails from "./components/ModalGroupDetails/ModalGroupDetails.vue";
 import ModalGroupNew from "./components/ModalGroupNew/ModalGroupNew.vue";
+
+import Login from "./components/Login/Login.vue";
 
 import Match from "./components/Match/Match.vue";
 import Matches from "./components/Matches/Matches.vue";
@@ -45,6 +49,7 @@ import ViewGroups from "./components/Groups/ViewGroups.vue";
 
 export default {
   name: 'app',
+
   components: {
     Bests,
 
@@ -52,6 +57,8 @@ export default {
     Cards,
 
     FinalPhase,
+
+    Login,
 
     Matches,
     ModalGroupDetails,
