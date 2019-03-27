@@ -25,6 +25,7 @@ import Capocannoniere from "./components/Capocannoniere/Capocannoniere.vue";
 import Cards from "./components/Cards/Cards.vue";
 
 import FinalPhase from "./components/FinalPhase/FinalPhase.vue"
+import FinalPhaseEuroCup from '@/components/FinalPhase/FinalPhaseEuroCup.vue';
 
 import ModalGroupDetails from "./components/ModalGroupDetails/ModalGroupDetails.vue";
 import ModalGroupNew from "./components/ModalGroupNew/ModalGroupNew.vue";
@@ -57,6 +58,7 @@ export default {
     Cards,
 
     FinalPhase,
+    FinalPhaseEuroCup,
 
     Login,
 

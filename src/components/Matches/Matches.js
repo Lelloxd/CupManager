@@ -9,13 +9,13 @@ export default {
     return {
       fields: {
         homeTeam: {
-          label: 'Home Team',
+          label: 'Home',
         },
         risultato: {
           label: 'Risultato',
         },
         guestTeam: {
-          label: 'Guest Team',
+          label: 'Guest',
         },
         date: {
           label: 'Data',

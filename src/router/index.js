@@ -4,6 +4,7 @@ import Cards from '@/components/Cards/Cards';
 import Capocannoniere from '@/components/Capocannoniere/Capocannoniere';
 
 import FinalPhase from '@/components/FinalPhase/FinalPhase';
+import FinalPhaseEuroCup from '@/components/FinalPhase/FinalPhaseEuroCup';
 
 import Login from '@/components/Login/Login';
 
@@ -103,6 +104,11 @@ let router = new Router({
     path: '/final-phase',
     name: 'finalPhase',
     component: FinalPhase,
+  },
+  {
+    path: '/final-phase-euro',
+    name: 'final-phase-euro',
+    component: FinalPhaseEuroCup,
   },
   {
     path: '/',

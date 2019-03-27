@@ -11,7 +11,7 @@
                 @blur="onFieldBlur('date')"
                 class="form-control"
                 id="date"
-                type="date"
+                type="datetime-local"
                 v-model.lazy.trim="form.date"
                 v-bind:class="getFieldClasses('date')"
               >

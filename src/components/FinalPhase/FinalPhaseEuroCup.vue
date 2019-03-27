@@ -1,6 +1,6 @@
 <template>
   <div class="component min-h-100">
-    <div class="col-md-12" v-if="loading">
+    <div class="col-md-12">
       <img class="mt-3" src="~@/assets/logo.png">
       <div class="col-md-12">
         <div class="content">
@@ -10,7 +10,7 @@
                 <b-card>
                   <b-card-text>
                     <span>Semifinale A</span>
-                    <span class="date">09-07-2019 21:40</span>
+                    <span class="date">09-07-2019 20:30</span>
                   </b-card-text>
                   In attesa di risultati
                 </b-card>
@@ -19,27 +19,18 @@
                 <b-card>
                   <b-card-text>
                     <span>Semifinale B</span>
-                    <span class="date">10-07-2019 21:40</span>
+                    <span class="date">10-07-2019 20:30</span>
                   </b-card-text>
                   In attesa di risultati
                 </b-card>
               </div>
             </div>
-            <div class="row mt-5">
+            <div class="row mt-5 justify-content-center">
               <div class="col-sm-6">
                 <b-card>
                   <b-card-text>
-                    <span>Finale 3° 4°</span>
-                    <span class="date">13-07-2019 20:40</span>
-                  </b-card-text>
-                   In attesa di risultati
-                </b-card>
-              </div>
-              <div class="col-sm-6">
-                <b-card>
-                  <b-card-text>
-                    <span>Finale 1° 2°</span>
-                    <span class="date">10-07-2019 21:45</span>
+                    <span>Finale Euro Cup</span>
+                    <span class="date">10-07-2019 19:30</span>
                   </b-card-text>
                    In attesa di risultati
                 </b-card>
@@ -50,13 +41,9 @@
       </div>
     </div>
 
-    <div class="loading" v-if="!loading">
-      <b-spinner variant="primary" label="spinning"></b-spinner>
-    </div>
   </div>
 </template>
 
-<script src="./FinalPhase.js"></script>
 <style src="../../styles/component.scss" lang="scss"></style>
 <style src="./FinalPhase.scss" lang="scss"></style>
 
