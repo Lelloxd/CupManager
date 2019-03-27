@@ -1,5 +1,6 @@
 import axios from 'axios';
 import Vue from 'vue';
+import moment from 'moment';
 import {mapState, mapActions} from 'vuex'
 
 export default {
@@ -19,7 +20,8 @@ export default {
         },
         date: {
           label: 'Data',
-          sortable: true
+          sortable: true,
+          formatter: value => moment(String(value)).format('DD/MM/YYYY'),
         },
         stato: {
           label: 'Stato',

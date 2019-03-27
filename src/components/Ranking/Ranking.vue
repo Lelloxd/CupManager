@@ -2,7 +2,7 @@
   <div class="component min-h-100">
     <div class="col-md-6" v-if="!loading">
       <div class="content">
-        <img src="~@/assets/logo.png">
+        <img v-if="status.loggedIn" src="~@/assets/logo.png">
 
         <div class="mt-5" v-for="group in groups" v-bind:key="group.id">
           <b-card>

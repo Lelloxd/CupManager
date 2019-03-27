@@ -24,6 +24,7 @@
               class="mb-3"
               striped
               hover
+              :small=true
               selectable
               :select-mode="'single'"
               :items="items"
@@ -37,7 +38,10 @@
               <template
                 slot="stato"
                 slot-scope="data"
-              >{{ data.item.completed ? 'Finita' : 'In corso' }}</template>
+              >
+              <div v-if="data.item.completed" class="spinner-grow text-success spinner-grow-sm" role="status"/>
+              <img class="image" v-else src="~@/assets/finish.png">
+              </template>
             </b-table>
 
             <b-card v-else>
@@ -61,3 +65,4 @@
 
 <script src="./Matches.js"></script>
 <style src="../../styles/component.scss" lang="scss"></style>
+<style src="./Matches.scss" lang="scss"></style>

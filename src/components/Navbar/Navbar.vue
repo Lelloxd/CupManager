@@ -9,7 +9,7 @@
         <b-nav-item-dropdown text="Classifiche" right>
           <b-dropdown-item router-link to="/ranking">Gironi</b-dropdown-item>
           <b-dropdown-item router-link to="/capocannoniere">Capocannoniere</b-dropdown-item>
-          <b-dropdown-item router-link to="/best">Miglior giocatore</b-dropdown-item>
+          <b-dropdown-item v-if="status.loggedIn"  router-link to="/best">Miglior giocatore</b-dropdown-item>
           <b-dropdown-item router-link to="/cards">Cartellini</b-dropdown-item>
         </b-nav-item-dropdown>
         <b-nav-item-dropdown text="Fase Finale" right>

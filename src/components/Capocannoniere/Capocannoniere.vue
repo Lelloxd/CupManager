@@ -2,7 +2,7 @@
   <div class="component min-h-100">
     <div class="col-md-4" v-if="!loading">
       <div class="content">
-        <img src="~@/assets/logo.png">
+        <img v-if="status.loggedIn" src="~@/assets/logo.png">
         <div class="mt-5" v-if="capocannoniere.length > 0">
           <b-card>
             <b-card-text>Capocannoniere</b-card-text>

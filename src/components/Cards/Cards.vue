@@ -2,7 +2,7 @@
   <div class="component min-h-100">
     <div class="col-md-6" v-if="!loading">
       <div class="content">
-        <img src="~@/assets/logo.png">
+        <img v-if="status.loggedIn" src="~@/assets/logo.png">
         <div class="mt-5" v-if="cards.length > 0">
           <b-card>
             <b-card-text>Cartellini</b-card-text>

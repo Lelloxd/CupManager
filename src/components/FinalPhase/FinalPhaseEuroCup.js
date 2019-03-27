@@ -1,7 +1,7 @@
 import {mapState, mapActions} from 'vuex'
 
 export default {
-  name: 'final-phase',
+  name: 'final-phase-euro',
 
   computed:{
     ...mapState('account', ['status']),

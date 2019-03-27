@@ -1,7 +1,36 @@
+
 .date {
-  font-size: 15px;
+  font-size: 13px;
   position: absolute;
-  right: 10px;
+  right: 2px;
+}
+
+.title{
+  font-size: 16px;
+}
+
+@media only screen and (min-width: 576px) {
+  .date {
+    font-size: 15px;
+    position: absolute;
+    right: 10px;
+  }
+}
+
+@media only screen and (min-width: 576px) {
+  .title {
+    font-size: 20px;
+  }
+}
+
+.first{
+  margin-bottom: 50px;
+}
+
+@media only screen and (min-width: 576px) {
+  .first{
+    margin-bottom: 0px;
+  }
 }
 
 .match {

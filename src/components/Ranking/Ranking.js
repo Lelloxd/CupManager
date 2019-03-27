@@ -1,8 +1,13 @@
 import axios from 'axios';
 import Vue from 'vue';
+import {mapState, mapActions} from 'vuex'
 
 export default {
   name: 'ranking',
+
+  computed:{
+    ...mapState('account', ['status']),
+  },
 
   data() {
     return {
