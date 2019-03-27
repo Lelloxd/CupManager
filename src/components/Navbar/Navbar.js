@@ -1,9 +1,4 @@
 import {mapState, mapActions} from 'vuex'
-import axios from 'axios'
-import Vue from 'vue'
-
-Vue.use(axios)
-
 
 export default {
   name: 'navbar',
