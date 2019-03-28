@@ -4,9 +4,10 @@ import Vue from 'vue';
 import axios from 'axios';
 import { store } from './store/index'
 import moment from 'moment'
-
 import App from './App.vue';
 import router from './router';
+
+import * as VueGoogleMaps from "vue2-google-maps";
 
 Vue.use(BootstrapVue);
 Vue.use(Vuelidate);
@@ -18,6 +19,12 @@ Vue.config.productionTip = false;
 Vue.filter('formatDate', function(value) {
   if (value) {
     return moment(String(value)).format('DD/MM/YYYY HH:mm')
+  }
+});
+
+Vue.use(VueGoogleMaps, {
+  load: {
+    key: "AIzaSyCJV277I4pVx80900_8LLm73io_Q6JtFfs",
   }
 });
 
@@ -37,4 +44,5 @@ axios.interceptors.request.use((config) => {
   console.log('request failed')
   return Promise.reject(error)
 })
+
 

@@ -23,6 +23,7 @@ import Bests from "./components/Bests/Bests.vue";
 
 import Capocannoniere from "./components/Capocannoniere/Capocannoniere.vue";
 import Cards from "./components/Cards/Cards.vue";
+import Contact from "./components/Contact/Contact.vue";
 
 import FinalPhase from "./components/FinalPhase/FinalPhase.vue"
 import FinalPhaseEuroCup from '@/components/FinalPhase/FinalPhaseEuroCup.vue';
@@ -56,6 +57,7 @@ export default {
 
     Capocannoniere,
     Cards,
+    Contact,
 
     FinalPhase,
     FinalPhaseEuroCup,

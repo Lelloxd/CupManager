@@ -24,7 +24,7 @@
               class="mb-3"
               striped
               hover
-              :small=true
+              :small="true"
               selectable
               :select-mode="'single'"
               :items="items"
@@ -35,12 +35,20 @@
                 slot="risultato"
                 slot-scope="data"
               >{{ data.item.homeResult }} - {{ data.item.guestResult }}</template>
-              <template
-                slot="stato"
-                slot-scope="data"
-              >
-              <div v-if="data.item.completed" class="spinner-grow text-success spinner-grow-sm" role="status"/>
-              <img class="image" v-else src="~@/assets/finish.png">
+              <template slot="stato" slot-scope="data">
+                <img
+                  class="image"
+                  v-if="data.item.status === 'Programmata'"
+                  src="~@/assets/yellow.png"
+                  v-b-tooltip.hover title="Programmata"
+                >
+                <img class="image" v-if="data.item.status === 'Finita'" v-b-tooltip.hover title="Conclusa" src="~@/assets/green.svg">
+                <div v-if="data.item.status === 'InCorso'" class="wrapper" v-b-tooltip.hover title="In Corso">
+                  <img
+                    class="ball5"
+                    src="http://www.tektoys.com/images/soccer-ball.png"
+                  >
+                </div>
               </template>
             </b-table>
 

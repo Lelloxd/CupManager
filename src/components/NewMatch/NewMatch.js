@@ -5,7 +5,6 @@ import { required } from 'vuelidate/lib/validators';
 
 export default {
   name: 'newTeam',
-
   data() {
     return {
       errorHeader: 'error.invalidFields',
@@ -14,7 +13,7 @@ export default {
         homeTeam: '',
         guestTeam: '',
         referee: '',
-        completed: false,
+        status: 0,
         date: '',
         matchType: '',
         group: null

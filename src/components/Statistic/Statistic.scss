@@ -60,3 +60,13 @@
   opacity: .8;
   font-size: 13px
 }
+
+.blinking{
+	animation:blinkingText 1.2s infinite;
+}
+@keyframes blinkingText{
+	0%{		color:white;	}
+
+	50%{	color: transparent;	}
+	100%{	color: white;	}
+}

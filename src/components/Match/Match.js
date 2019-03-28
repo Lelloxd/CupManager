@@ -8,7 +8,7 @@ export default {
     return {
       player: '',
       isHome: true,
-      isCompleted: false,
+      status: 0,
       cardType: '',
       minute: 0,
       goal: {
@@ -167,10 +167,10 @@ export default {
         });
     },
 
-    completedMatch(completed) {
-      axios.put(`${Vue.config.ApiUrl}/match/completedMatch?completed=${completed}`, this.match)
+    completedMatch(matchStatus) {
+      axios.put(`${Vue.config.ApiUrl}/match/completedMatch?matchStatus=${matchStatus}`, this.match)
         .then(() => {
-          if (!this.isCompleted) {
+          if (this.status === 'InCorso') {
             axios.put(`${Vue.config.ApiUrl}/ranking/match?matchId=${this.match.id}`)
               .then(() => {})
               .catch((error) => {
@@ -298,7 +298,8 @@ export default {
           this.homeBest = this.statisticMatch.homeBest;
           this.guestBest = this.statisticMatch.guestBest;
           this.allPlayers = this.homePlayers.concat(this.guestPlayers);
-          this.isCompleted = this.statisticMatch.completed;
+          this.status = this.statisticMatch.status;
+          console.log(this.status)
 
           if (this.isHome) {
             this.setHomePlayersGoals();

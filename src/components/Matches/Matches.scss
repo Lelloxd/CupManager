@@ -2,3 +2,23 @@
   width: auto;
   height: 15px;
 }
+
+img.ball5 {
+  animation: bounceball 0.5s ease-out 0 alternate none running;
+  animation-iteration-count: infinite;
+  bottom: 0;
+  top: calc(100% - 50%);
+  height: 50%;
+  position: relative;
+}
+
+@keyframes bounceball {
+  from { top: calc(100% - 50% - 5.8px);}
+  to   { top: -20%;}
+}
+
+.wrapper {
+  height: 22px;
+  width: 100%;
+  position: relative;
+}

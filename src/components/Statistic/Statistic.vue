@@ -7,12 +7,12 @@
       </span>
     </div>
     <br>
-    <img src="~@/assets/logo.png">
+    <img v-if="status.loggedIn" src="~@/assets/logo.png">
     <div class="container col-12 father">
       <div class="container col-10 mt-4">
         <div class="row risultato">
           <div class="col-sm-5 team-name"><a>{{statisticMatch.homeTeam}}</a></div>
-          <div class="col-sm-2 team-name" style="background-color:#e90052" ><strong>{{statisticMatch.homeResult}} - {{statisticMatch.guestResult}}</strong></div>
+          <div class="col-sm-2 team-name" v-bind:class="{ blinking: statisticMatch.status === 'InCorso' }" style="background-color:#e90052" ><strong>{{statisticMatch.homeResult}} - {{statisticMatch.guestResult}}</strong></div>
           <div class="col-sm-5 team-name">{{statisticMatch.guestTeam}}</div>
         </div>
       </div>

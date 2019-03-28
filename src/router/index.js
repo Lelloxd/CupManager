@@ -2,6 +2,7 @@ import Bests from '@/components/Bests/Bests';
 
 import Cards from '@/components/Cards/Cards';
 import Capocannoniere from '@/components/Capocannoniere/Capocannoniere';
+import Contact from '@/components/Contact/Contact';
 
 import FinalPhase from '@/components/FinalPhase/FinalPhase';
 import FinalPhaseEuroCup from '@/components/FinalPhase/FinalPhaseEuroCup';
@@ -42,6 +43,11 @@ let router = new Router({
     path: '/cards',
     name: 'cards',
     component: Cards,
+  },
+  {
+    path: '/contact',
+    name: 'contact',
+    component: Contact,
   },
   {
     path: '/match',
@@ -114,7 +120,6 @@ let router = new Router({
     path: '/',
     redirect: '/ranking',
   },
-  ,
   {
     path: '/login',
     name: 'login',

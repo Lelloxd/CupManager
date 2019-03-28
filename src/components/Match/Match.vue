@@ -25,7 +25,7 @@
             <div class="container">
               <div class="row">
                 <div class="col-sm-5">
-                  <div v-if="!isCompleted">
+                  <div v-if="status === 'InCorso'">
                     <b-button
                       class="btn btn-info btn-sm"
                       v-b-modal.modalGol
@@ -79,7 +79,7 @@
                   </b-table>
                 </div>
                 <div class="col-sm-2">
-                  <div class="mt-2" v-if="!isCompleted">
+                  <div class="mt-2" v-if="status === 'InCorso'">
                     <p>Angoli</p>
                     <b-button
                       class="btn btn-info btn-sm"
@@ -113,7 +113,7 @@
                 </div>
                 <div class="col-sm-5">
                   <div>
-                    <div v-if="!isCompleted">
+                    <div v-if="status === 'InCorso'">
                       <b-button
                         class="btn btn-info btn-sm"
                         v-b-modal.modalGol
@@ -173,19 +173,25 @@
             <div class="mb-3 mt-3">
               <b-button v-b-modal.modalDelete href="#" variant="warning">Elimina</b-button>
               <b-button
-                v-if="!isCompleted"
+                v-if="status === 'InCorso'"
                 v-b-modal.modalCompleted
                 href="#"
                 variant="warning"
               >Finita</b-button>
+               <b-button
+                v-if="status === 'Programmata'"
+                v-b-modal.modalCompleted
+                href="#"
+                variant="warning"
+              >Inizia</b-button>
               <b-button
-                v-if="isCompleted"
+                v-if="status === 'Finita'"
                 v-b-modal.modalCompleted
                 href="#"
                 variant="warning"
               >Ri-apri</b-button>
               <b-button
-                v-if="isCompleted"
+                v-if="status === 'Finita'"
                 @click="getStatistic()"
                 variant="warning"
               >Genera statistiche</b-button>
@@ -201,21 +207,29 @@
 
         <!-- Completed -->
         <b-modal id="modalCompleted" hide-footer title="Salva partita">
-          <p v-if="!isCompleted" class="my-4">Confermi di voler completare questa partita?</p>
-          <p v-if="isCompleted" class="my-4">Confermi di voler ri-aggiornare questa partita?</p>
+          <p v-if="status === 'InCorso'" class="my-4">Confermi di voler completare questa partita?</p>
+          <p v-if="status === 'Finita'" class="my-4">Confermi di voler ri-aggiornare questa partita?</p>
+          <p v-if="status === 'Programmata'" class="my-4">Confermi di voler iniziare questa partita?</p>
           <a
-            v-if="!isCompleted"
+            v-if="status === 'InCorso'"
             v-b-modal.modalCompleted
             href="#"
             class="btn btn-warning"
-            @click.prevent="completedMatch(true)"
+            @click.prevent="completedMatch('Finita')"
           >Finita</a>
           <a
-            v-if="isCompleted"
+            v-if="status === 'Programmata'"
             v-b-modal.modalCompleted
             href="#"
             class="btn btn-warning"
-            @click.prevent="completedMatch(false)"
+            @click.prevent="completedMatch('InCorso')"
+          >Inizia</a>
+          <a
+            v-if="status === 'Finita'"
+            v-b-modal.modalCompleted
+            href="#"
+            class="btn btn-warning"
+            @click.prevent="completedMatch('InCorso')"
           >Ri-apri</a>
         </b-modal>
 

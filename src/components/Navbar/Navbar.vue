@@ -29,6 +29,7 @@
           <b-dropdown-item router-link to="newMatch">Nuova partita</b-dropdown-item>
         </b-nav-item-dropdown>
         <b-nav-item  v-else router-link to="all-matches">Partite</b-nav-item>
+        <b-nav-item router-link to="contact" >Contatti</b-nav-item>
         <b-nav-item v-if="status.loggedIn" @click=handleSubmit>Logout</b-nav-item>
       </b-navbar-nav>
     </b-collapse>
