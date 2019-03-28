@@ -9,7 +9,6 @@
     "dev:remote": "webpack-dev-server --inline --progress --config build/webpack.prod.conf.js",
     "lint": "eslint --ext .js,.vue src",
     "build": "node build/build.js",
-    "postinstall": "npm run build",
     "start": "node server.js"
   },
   "dependencies": {
