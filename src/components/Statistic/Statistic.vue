@@ -36,7 +36,7 @@
         </div>
       </div>
     </div>
-    <div class="container col-10 mt-4">
+    <div class="container col-10 mt-4 players">
       <div class="row">
         <div class="col-sm-4">
           <b-card class="card">
