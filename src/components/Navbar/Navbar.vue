@@ -1,21 +1,21 @@
 <template>
   <b-navbar class="w-100" toggleable="lg" type="dark" variant="info">
-    <b-navbar-brand href="#">
+    <b-navbar-brand router-link to="/">
       <img alt="Rovarè Cup" class="navbar-logo" src="~@/assets/logo.png">
     </b-navbar-brand>
     <b-navbar-toggle target="nav_collapse"/>
     <b-collapse is-nav id="nav_collapse">
       <b-navbar-nav>
+        <b-nav-item-dropdown text="Calendario" right>
+          <b-dropdown-item router-link to="/calendario">Eliminatorie</b-dropdown-item>
+           <b-dropdown-item router-link to="/final-phase">Fase Finale Rovarè Cup</b-dropdown-item>
+           <b-dropdown-item router-link to="/final-phase-euro">Fase Finale Euro Cup</b-dropdown-item>
+        </b-nav-item-dropdown>
         <b-nav-item-dropdown text="Classifiche" right>
           <b-dropdown-item router-link to="/ranking">Gironi</b-dropdown-item>
           <b-dropdown-item router-link to="/capocannoniere">Capocannoniere</b-dropdown-item>
           <b-dropdown-item v-if="status.loggedIn"  router-link to="/best">Miglior giocatore</b-dropdown-item>
           <b-dropdown-item router-link to="/cards">Cartellini</b-dropdown-item>
-        </b-nav-item-dropdown>
-        <b-nav-item-dropdown text="Calendario" right>
-          <b-dropdown-item router-link to="/calendario">Eliminatorie</b-dropdown-item>
-           <b-dropdown-item router-link to="/final-phase">Fase Finale Rovarè Cup</b-dropdown-item>
-           <b-dropdown-item router-link to="/final-phase-euro">Fase Finale Euro Cup</b-dropdown-item>
         </b-nav-item-dropdown>
         <b-nav-item-dropdown v-if="status.loggedIn" text="Squadre" right>
           <b-dropdown-item router-link to="team">Squadre</b-dropdown-item>

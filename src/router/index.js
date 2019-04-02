@@ -120,7 +120,7 @@ let router = new Router({
   },
   {
     path: '/',
-    redirect: '/ranking',
+    redirect: '/calendario',
   },
   {
     path: '/login',
