@@ -8,7 +8,7 @@
             <div class="row">
               <div class="first col-md-6">
                 <b-card>
-                  <b-card-text>
+                  <b-card-text class="title-date">
                     <span class="title">Semifinale A</span>
                     <span class="date">09-07-2019 21:40</span>
                   </b-card-text>
@@ -17,7 +17,7 @@
               </div>
               <div class="col-md-6">
                 <b-card>
-                  <b-card-text>
+                  <b-card-text class="title-date">
                     <span class="title">Semifinale B</span>
                     <span class="date">10-07-2019 21:40</span>
                   </b-card-text>
@@ -28,7 +28,7 @@
             <div class="row mt-5">
               <div class="first col-md-6">
                 <b-card>
-                  <b-card-text>
+                  <b-card-text class="title-date">
                     <span class="title">Finale 3° 4°</span>
                     <span class="date">13-07-2019 20:40</span>
                   </b-card-text>
@@ -37,7 +37,7 @@
               </div>
               <div class="col-md-6">
                 <b-card>
-                  <b-card-text>
+                  <b-card-text class="title-date">
                     <span class="title">Finale 1° 2°</span>
                     <span class="date">10-07-2019 21:45</span>
                   </b-card-text>

@@ -12,10 +12,10 @@
     <br>
     <img v-if="status.loggedIn" src="~@/assets/logo.png">
     <div class="container col-12 father">
-      <div class="container col-10 mt-2">
+      <div class="container col-11 mt-2">
         <div class="row risultato">
           <div class="col-5">
-            <a>{{statisticMatch.homeTeam}}</a>
+            <a>Imbrianchi</a>
           </div>
           <div
             class="col-2 score"
