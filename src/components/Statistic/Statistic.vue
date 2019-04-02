@@ -4,7 +4,10 @@
     <div class="container col-11 data detail-row">
       <span>
         {{statisticMatch.date | formatDate}} - {{matchType}}
-        <img class="ml-2 icon" src="../../assets/whistle.png">
+        <img
+          class="ml-2 icon"
+          src="../../assets/whistle.png"
+        >
         {{statisticMatch.referee}}
         <img class="ml-2 icon" src="../../assets/stadium.png"> Rovarè Stadium
       </span>
@@ -14,9 +17,7 @@
     <div class="container col-12 father">
       <div class="container col-11 mt-2">
         <div class="row risultato">
-          <div class="col-5">
-            <a>Imbrianchi</a>
-          </div>
+          <div class="col-5">{{statisticMatch.homeTeam}}</div>
           <div
             class="col-2 score"
             v-bind:class="{ blinking: statisticMatch.status === 'InCorso' }"
