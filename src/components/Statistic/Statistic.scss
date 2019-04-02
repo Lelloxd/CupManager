@@ -1,4 +1,4 @@
-.players{
+.players {
   display: none;
 }
 
@@ -8,39 +8,39 @@
   }
 }
 
-.statistic{
-  background-image: url('/assets/background.jpg');
+.statistic {
+  background-image: url("/assets/background.jpg");
   background-position: center;
   background-repeat: no-repeat;
 }
-.inLine{
-  display: inline-block
+.inLine {
+  display: inline-block;
 }
-.data{
-   background-color:rgba(56, 0, 60, 0.5);
-   text-align: left
+.data {
+  background-color: rgba(56, 0, 60, 0.5);
+  text-align: left;
 }
 
-.risultato{
-  color:white;
+.risultato {
+  color: white;
   height: 100%;
-  background-color:rgb(56, 0, 60);
+  background-color: rgb(56, 0, 60);
   font-size: 20px;
   white-space: nowrap;
   text-align: center;
   margin: 0 auto;
 }
 @media only screen and (min-width: 812px) {
-  .risultato{
-    color:white;
+  .risultato {
+    color: white;
     height: 100%;
-    background-color:rgb(56, 0, 60);
+    background-color: rgb(56, 0, 60);
     font-size: 30px;
     white-space: nowrap;
   }
 }
 
-.father{
+.father {
   background-color: rgba(56, 0, 60, 0.5);
   text-align: center;
 }
@@ -49,66 +49,101 @@
   height: 100%;
   position: absolute;
   left: 50%;
-  }
-.card{
-  opacity:0.9;
+}
+.card {
+  opacity: 0.9;
 }
 .card-body {
-  padding:  0px;
+  padding: 0px;
 }
-.table{
+.table {
   margin-bottom: 0px;
 }
-.table th{
-  border-top: 0px
+.table th {
+  border-top: 0px;
 }
-.progress{
-  background-color: rgb(77, 77, 247)
+.progress {
+  background-color: rgb(77, 77, 247);
 }
 .bg-primary {
-    background-color: rgb(231, 77, 77) !important;
+  background-color: rgb(231, 77, 77) !important;
 }
 
-.icon{
+.icon {
   width: auto;
   height: 8px;
 }
 @media only screen and (min-width: 812px) {
-  .icon{
+  .icon {
     width: auto;
     height: 13px;
   }
 }
 
-.icon2{
+.icon2 {
   width: auto;
   height: 20px;
 }
 
-.detail-row{
+.detail-row {
   color: white;
-  opacity: .8;
-  font-size: 8px
+  opacity: 0.8;
+  font-size: 8px;
 }
 @media only screen and (min-width: 812px) {
-  .detail-row{
+  .detail-row {
     color: white;
-    opacity: .8;
-    font-size: 13px
+    opacity: 0.8;
+    font-size: 13px;
   }
 }
 
-.blinking{
-	animation:blinkingText 1.2s infinite;
+.blinking {
+  animation: blinkingText 1.2s infinite;
 }
-@keyframes blinkingText{
-	0%{		color:white;	}
-
-	50%{	color: transparent;	}
-	100%{	color: white;	}
+@keyframes blinkingText {
+  0% {
+    color: white;
+  }
+  50% {
+    color: transparent;
+  }
+  100% {
+    color: white;
+  }
 }
 
-.lello {
+.score {
   padding-left: 0;
-  padding-right: 0
+  padding-right: 0;
+}
+
+.gol {
+  font-size: 10px;
+  color: white;
+}
+
+@media only screen and (min-width: 812px) {
+  .gol {
+    font-size: 15px;
+    color: white;
+  }
+}
+
+.statistic-detail{
+  font-size: 10px;
+  .progress{
+    height: 7px;
+    margin-top :0.3em
+  }
+}
+
+@media only screen and (min-width: 812px) {
+  .statistic-detail{
+    font-size: 15px;
+    .progress{
+      height: 10px;
+      margin-top :0.3em
+    }
+  }
 }
