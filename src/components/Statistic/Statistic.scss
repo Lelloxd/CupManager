@@ -8,9 +8,6 @@
   }
 }
 
-.team-name{
-  font-size: 30px;
-}
 .statistic{
   background-image: url('/assets/background.jpg');
   background-position: center;
@@ -23,12 +20,26 @@
    background-color:rgba(56, 0, 60, 0.5);
    text-align: left
 }
+
 .risultato{
   color:white;
   height: 100%;
   background-color:rgb(56, 0, 60);
-  text-align: center
+  font-size: 20px;
+  white-space: nowrap;
+  text-align: center;
+  margin: 0 auto;
 }
+@media only screen and (min-width: 812px) {
+  .risultato{
+    color:white;
+    height: 100%;
+    background-color:rgb(56, 0, 60);
+    font-size: 30px;
+    white-space: nowrap;
+  }
+}
+
 .father{
   background-color: rgba(56, 0, 60, 0.5);
   text-align: center;
@@ -57,18 +68,34 @@
 .bg-primary {
     background-color: rgb(231, 77, 77) !important;
 }
+
 .icon{
   width: auto;
-  height: 13px;
+  height: 8px;
 }
+@media only screen and (min-width: 812px) {
+  .icon{
+    width: auto;
+    height: 13px;
+  }
+}
+
 .icon2{
   width: auto;
   height: 20px;
 }
+
 .detail-row{
   color: white;
   opacity: .8;
-  font-size: 13px
+  font-size: 8px
+}
+@media only screen and (min-width: 812px) {
+  .detail-row{
+    color: white;
+    opacity: .8;
+    font-size: 13px
+  }
 }
 
 .blinking{
@@ -79,4 +106,9 @@
 
 	50%{	color: transparent;	}
 	100%{	color: white;	}
+}
+
+.lello {
+  padding-left: 0;
+  padding-right: 0
 }

@@ -11,9 +11,9 @@
     <div class="container col-12 father">
       <div class="container col-10 mt-4">
         <div class="row risultato">
-          <div class="col-sm-5 team-name"><a>{{statisticMatch.homeTeam}}</a></div>
-          <div class="col-sm-2 team-name" v-bind:class="{ blinking: statisticMatch.status === 'InCorso' }" style="background-color:#e90052" ><strong>{{statisticMatch.homeResult}} - {{statisticMatch.guestResult}}</strong></div>
-          <div class="col-sm-5 team-name">{{statisticMatch.guestTeam}}</div>
+          <div class="col-5"><a>{{statisticMatch.homeTeam}}</a></div>
+          <div class="col-2 lello" v-bind:class="{ blinking: statisticMatch.status === 'InCorso' }" style="background-color:#e90052 " >{{statisticMatch.homeResult}} - {{statisticMatch.guestResult}}</div>
+          <div class="col-5">{{statisticMatch.guestTeam}}</div>
         </div>
       </div>
       <div class="container col-12">
