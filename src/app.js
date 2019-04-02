@@ -24,7 +24,7 @@ Vue.filter('formatDate', function(value) {
 
 Vue.use(VueGoogleMaps, {
   load: {
-    key: "AIzaSyCJV277I4pVx80900_8LLm73io_Q6JtFfs",
+    key: "AIzaSyCf7CD0VrUe0-bOBhvQCmrHeXFi6XB0Nro",
   }
 });
 
