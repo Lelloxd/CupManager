@@ -19,9 +19,6 @@ export default {
         guestPlayers: [{}],
       },
       fields: {
-        numberOfMesh: {
-          label: ""
-        },
         name: {
           label: ""
         }

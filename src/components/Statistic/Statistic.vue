@@ -12,7 +12,7 @@
     <br>
     <img v-if="status.loggedIn" src="~@/assets/logo.png">
     <div class="container col-12 father">
-      <div class="container col-10 mt-4">
+      <div class="container col-10 mt-2">
         <div class="row risultato">
           <div class="col-5">
             <a>{{statisticMatch.homeTeam}}</a>
@@ -27,11 +27,11 @@
       </div>
       <div class="container col-12">
         <div class="row">
-          <div class="col-6 mt-2" style="text-align: right; ">
+          <div class="col-6 mt-2 mb-2" style="text-align: right; ">
             <div v-for="[name, gol] of mapGoalHome" v-bind:key="name">
               <div class="gol">
                 {{name}} {{gol}}
-                <img src="../../assets/soccer-ball.png">
+                <img class="icon2" src="../../assets/gol.png">
               </div>
             </div>
           </div>
@@ -39,7 +39,7 @@
           <div class="col-6 mt-2" style="text-align: left;">
             <div v-for="[name, gol] of mapGoalGuest" v-bind:key="gol">
               <div class="gol">
-                <img src="../../assets/soccer-ball.png">
+                <img class="icon2" src="../../assets/gol.png">
                 {{name}} {{gol}}
               </div>
             </div>
@@ -61,12 +61,9 @@
                 :items="statisticMatch.homePlayers"
                 :fields="fields"
               >
-                <template slot="numberOfMesh" slot-scope="data" hide>
-                  <div class="ml-5" style="text-align: right">{{ data.item.numberOfMesh}}.</div>
-                </template>
                 <template slot="name" slot-scope="data" hide>
-                  <div style="text-align: left">
-                    {{ data.item.name}} {{ data.item.surname}}
+                  <div style="text-align: center">
+                    {{ data.item.numberOfMesh}}. {{ data.item.name}} {{ data.item.surname}}
                     <div
                       class="inLine"
                       v-for="index in getNumberOfGoal(data.item, true)"
@@ -120,7 +117,7 @@
                 <span>Tiri fuori</span>
                 <div class="row">
                   <div class="pr-0 mb-0 col-2">{{statisticMatch.homeShotsOutGol}}</div>
-                  <div class="pl-0 pr-0 col-8 mt-1">
+                  <div class="pl-0 pr-0 col-8">
                     <b-progress variant="primary" :value="outShotValue"/>
                   </div>
                   <div class="pl-0 mb-0 col-2">{{statisticMatch.guestShotsOutGol}}</div>
@@ -130,7 +127,7 @@
                 <span>Angoli</span>
                 <div class="row">
                   <div class="pr-0 mb-0 col-2">{{statisticMatch.homeCorners}}</div>
-                  <div class="pl-0 pr-0 col-8 mt-1">
+                  <div class="pl-0 pr-0 col-8">
                     <b-progress variant="primary" :value="cornerValue"/>
                   </div>
                   <div class="pl-0 mb-0 col-2">{{statisticMatch.guestCorners}}</div>
@@ -172,12 +169,9 @@
                 :items="statisticMatch.guestPlayers"
                 :fields="fields"
               >
-                <template slot="numberOfMesh" slot-scope="data" hide>
-                  <div class="ml-5" style="text-align: right">{{ data.item.numberOfMesh}}.</div>
-                </template>
                 <template slot="name" slot-scope="data" hide>
-                  <div style="text-align: left">
-                    {{ data.item.name}} {{ data.item.surname}}
+                  <div style="text-align: center">
+                    {{ data.item.numberOfMesh}}. {{ data.item.name}} {{ data.item.surname}}
                     <div
                       class="inLine"
                       v-for="index in getNumberOfGoal(data.item, false)"
