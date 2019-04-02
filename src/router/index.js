@@ -1,5 +1,7 @@
 import Bests from '@/components/Bests/Bests';
 
+import Calendar from "@/components/Calendar/Calendar";
+
 import Cards from '@/components/Cards/Cards';
 import Capocannoniere from '@/components/Capocannoniere/Capocannoniere';
 import Contact from '@/components/Contact/Contact';
@@ -124,6 +126,11 @@ let router = new Router({
     path: '/login',
     name: 'login',
     component: Login,
+  },
+  {
+    path: '/calendario',
+    name: 'calendario',
+    component: Calendar,
   }],
 });
 

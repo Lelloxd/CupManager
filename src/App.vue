@@ -21,6 +21,8 @@ import VueResource from 'vue-resource';
 
 import Bests from "./components/Bests/Bests.vue";
 
+import Calendar from "./components/Calendar/Calendar.vue";
+
 import Capocannoniere from "./components/Capocannoniere/Capocannoniere.vue";
 import Cards from "./components/Cards/Cards.vue";
 import Contact from "./components/Contact/Contact.vue";
@@ -54,6 +56,8 @@ export default {
 
   components: {
     Bests,
+
+    Calendar,
 
     Capocannoniere,
     Cards,

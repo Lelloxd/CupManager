@@ -12,7 +12,8 @@
           <b-dropdown-item v-if="status.loggedIn"  router-link to="/best">Miglior giocatore</b-dropdown-item>
           <b-dropdown-item router-link to="/cards">Cartellini</b-dropdown-item>
         </b-nav-item-dropdown>
-        <b-nav-item-dropdown text="Fase Finale" right>
+        <b-nav-item-dropdown text="Calendario" right>
+          <b-dropdown-item router-link to="/calendario">Eliminatorie</b-dropdown-item>
            <b-dropdown-item router-link to="/final-phase">Fase Finale Rovarè Cup</b-dropdown-item>
            <b-dropdown-item router-link to="/final-phase-euro">Fase Finale Euro Cup</b-dropdown-item>
         </b-nav-item-dropdown>
