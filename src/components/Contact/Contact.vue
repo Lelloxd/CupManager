@@ -23,7 +23,9 @@
                   <a href="https://www.instagram.com/officialrovarecup/">
                     <i class="fab fa-instagram fa-2x"></i>
                   </a>
-                  <i class="fab fa-youtube fa-2x youtube"></i>
+                  <a href="https://www.youtube.com/channel/UC4kL40EfJsdADJEpzC6E_OA?view_as=subscriber">
+                    <i class="fab fa-youtube fa-2x youtube"></i>
+                  </a>
                 </p>
               </div>
               <div class="col-md-12">

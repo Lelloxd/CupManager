@@ -6,17 +6,16 @@
         <div class="mt-5" v-if="bests.length > 0">
           <b-card>
             <b-card-text>Miglior giocatore</b-card-text>
-
             <b-table class="mb-3" :small="true" striped hover :items="bests" :fields="fields">
               <template slot="name" slot-scope="data">{{ data.item[0] }} {{ data.item[1] }}</template>
               <template slot="best" slot-scope="data">{{ data.item[2] }}</template>
             </b-table>
           </b-card>
         </div>
-         <div class="mt-5" v-else>
+        <div class="mt-5" v-else>
           <b-card-text>Miglior giocatore</b-card-text>
           <b-card>
-            <p> Nessun giocatore è stato ancora selezionato</p>
+            <p>Nessun giocatore è stato ancora selezionato</p>
           </b-card>
         </div>
       </div>

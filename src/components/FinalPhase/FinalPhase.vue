@@ -1,7 +1,9 @@
 <template>
   <div class="component min-h-100">
     <div class="col-md-12" v-if="loading">
-      <img v-if="status.loggedIn" class="mt-3" src="~@/assets/logo.png">
+      <div class="title-backgroud mt-3">
+        <p class="title-page mt-3">FASE FINALE ROVARE' CUP</p>
+      </div>
       <div class="col-md-12">
         <div class="content">
           <div class="container">
@@ -11,8 +13,7 @@
                   <b-card-text class="title-date">
                     <span class="title">Semifinale A</span>
                     <span class="date">09-07-2019 21:40</span>
-                  </b-card-text>
-                  In attesa di risultati
+                  </b-card-text>In attesa di risultati
                 </b-card>
               </div>
               <div class="col-md-6">
@@ -20,8 +21,7 @@
                   <b-card-text class="title-date">
                     <span class="title">Semifinale B</span>
                     <span class="date">10-07-2019 21:40</span>
-                  </b-card-text>
-                  In attesa di risultati
+                  </b-card-text>In attesa di risultati
                 </b-card>
               </div>
             </div>
@@ -31,8 +31,7 @@
                   <b-card-text class="title-date">
                     <span class="title">Finale 3° 4°</span>
                     <span class="date">13-07-2019 20:40</span>
-                  </b-card-text>
-                   In attesa di risultati
+                  </b-card-text>In attesa di risultati
                 </b-card>
               </div>
               <div class="col-md-6">
@@ -40,8 +39,7 @@
                   <b-card-text class="title-date">
                     <span class="title">Finale 1° 2°</span>
                     <span class="date">10-07-2019 21:45</span>
-                  </b-card-text>
-                   In attesa di risultati
+                  </b-card-text>In attesa di risultati
                 </b-card>
               </div>
             </div>

@@ -1,7 +1,9 @@
 <template>
   <div class="component min-h-100">
     <div class="col-md-12" v-if="loading">
-      <img v-if="status.loggedIn" class="mt-3" src="~@/assets/logo.png">
+      <div class="title-backgroud mt-3">
+        <p class="title-page mt-3">FASE A GIRONI</p>
+      </div>
       <div class="content">
         <div class="container">
           <div class="col-md-12">

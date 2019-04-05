@@ -11,6 +11,20 @@ export default {
 
   data() {
     return {
+      items: [
+        {
+          text: 'Admin',
+          href: '#'
+        },
+        {
+          text: 'Manage',
+          href: '#'
+        },
+        {
+          text: 'Library',
+          active: true
+        }
+      ],
       bests: this.getBests(),
       fields: {
         name: {

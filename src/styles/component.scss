@@ -1,7 +1,7 @@
-@import './settings';
+@import "./settings";
 
 .component {
-  background-image: url('/assets/background.jpg');
+  background-image: url("~@/assets/background.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -28,7 +28,7 @@
   }
 
   .card-match {
-    opacity: .9;
+    opacity: 0.9;
   }
 
   .card-text {
@@ -52,4 +52,27 @@
   .row-style {
     width: 50%;
   }
+
+  .title-backgroud {
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    background-color: #23406b77
+  }
+
+  .title-page {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .calendar-backgroud{
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    background-color: #23406b77
+  }
+
 }

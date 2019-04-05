@@ -7,7 +7,7 @@
     <b-collapse is-nav id="nav_collapse">
       <b-navbar-nav>
         <b-nav-item-dropdown text="Calendario" right>
-          <b-dropdown-item router-link to="/calendario">Eliminatorie</b-dropdown-item>
+          <b-dropdown-item router-link to="/calendario">Fase a gironi</b-dropdown-item>
            <b-dropdown-item router-link to="/final-phase">Fase Finale Rovarè Cup</b-dropdown-item>
            <b-dropdown-item router-link to="/final-phase-euro">Fase Finale Euro Cup</b-dropdown-item>
         </b-nav-item-dropdown>
