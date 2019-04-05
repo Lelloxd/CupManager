@@ -7,10 +7,13 @@ import moment from 'moment'
 import App from './App.vue';
 import router from './router';
 
+import VueCarousel from 'vue-carousel';
+
 import * as VueGoogleMaps from "vue2-google-maps";
 
 Vue.use(BootstrapVue);
 Vue.use(Vuelidate);
+Vue.use(VueCarousel);
 
 Vue.config.ApiUrl = process.env.VUE_APP_API;
 Vue.config.env = process.env.NODE_ENV;

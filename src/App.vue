@@ -33,6 +33,8 @@ import FinalPhaseEuroCup from '@/components/FinalPhase/FinalPhaseEuroCup.vue';
 import ModalGroupDetails from "./components/ModalGroupDetails/ModalGroupDetails.vue";
 import ModalGroupNew from "./components/ModalGroupNew/ModalGroupNew.vue";
 
+import Home from "./components/Home/Home.vue";
+
 import Login from "./components/Login/Login.vue";
 
 import Match from "./components/Match/Match.vue";
@@ -65,6 +67,8 @@ export default {
 
     FinalPhase,
     FinalPhaseEuroCup,
+
+    Home,
 
     Login,
 

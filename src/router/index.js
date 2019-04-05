@@ -9,6 +9,8 @@ import Contact from '@/components/Contact/Contact';
 import FinalPhase from '@/components/FinalPhase/FinalPhase';
 import FinalPhaseEuroCup from '@/components/FinalPhase/FinalPhaseEuroCup';
 
+import Home from '@/components/Home/Home';
+
 import Login from '@/components/Login/Login';
 
 import Match from '@/components/Match/Match';
@@ -131,6 +133,11 @@ let router = new Router({
     path: '/calendario',
     name: 'calendario',
     component: Calendar,
+  },
+  {
+    path: '/home',
+    name: 'Home',
+    component: Home,
   }],
 });
 
