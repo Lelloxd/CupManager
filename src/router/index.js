@@ -33,6 +33,7 @@ import Vue from 'vue';
 Vue.use(Router);
 
 let router = new Router({
+  mode: 'history',
   routes: [{
     path: '/best',
     name: 'best',
