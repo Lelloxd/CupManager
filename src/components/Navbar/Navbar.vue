@@ -1,6 +1,6 @@
 <template>
   <b-navbar class="w-100" toggleable="lg" type="dark" variant="info">
-    <b-navbar-brand router-link to="/">
+    <b-navbar-brand router-link to="/home">
       <img alt="Rovarè Cup" class="navbar-logo" src="~@/assets/logo.png">
     </b-navbar-brand>
     <b-navbar-toggle target="nav_collapse"/>
