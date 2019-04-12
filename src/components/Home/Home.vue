@@ -71,7 +71,7 @@
                 <div class="first col-md-4">
                   <b-card
                     class="first"
-                    img-src="../../assets/iscriviti.png"
+                    img-src="../../assets/sorteggi.png"
                     img-alt="Card image"
                     img-bottom
                     bg-variant="light"
@@ -93,7 +93,7 @@
                 <div class="first col-md-4">
                   <b-card
                     class="first"
-                    img-src="../../assets/iscriviti.png"
+                    img-src="../../assets/volantino.jpeg"
                     img-alt="Card image"
                     img-bottom
                     bg-variant="light"
