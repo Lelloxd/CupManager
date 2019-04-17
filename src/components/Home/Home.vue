@@ -57,7 +57,7 @@
                   >
                     <b-card-text class="title-date">
                       <span class="title">Ultimi posti disponibili!!!</span>
-                      <span class="date">15-03-19</span>
+                      <span class="date">15-04-19</span>
                     </b-card-text>
                     <p>Ancora pochi posti a disponibili per la Rovarè Cup 2019!!!</p>
                     <p>
@@ -80,13 +80,10 @@
                       <span class="title">Iscrizioni aperte !!!</span>
                       <span class="date">15-03-19</span>
                     </b-card-text>
-                    <p>Non è estate senza Rovarè Cup😎</p>
-                    <p>Torna la terza edizione del torneo più importante della provincia di Treviso🏟</p>
+                    <p>Non è estate senza Rovarè Cup 😎</p>
                     <p>Dal 24/06 al 13/07</p>
-                    <p>⚽️Torneo di calcio a 7 ⚽</p>
-                    <p>💰Montepremi totale 2000€ 💰</p>
-                    <p>🍺Coppa chiosco 🍺</p>
-                    <p>🍔Food&Drink area attiva tutte le sere 🍻</p>
+                    <p>⚽ Torneo di calcio a 7 ⚽</p>
+                    <p>💰 Montepremi totale 2000€ 💰</p>
                     <a href="https://www.facebook.com/events/1711907855621098/">Iscriviti!</a>
                   </b-card>
                 </div>
@@ -104,8 +101,7 @@
                     </b-card-text>
                     <p>Non fartelo raccontare⚽️🥇</p>
                     <p>Per info ed iscrizioni: ‭</p>
-                    <p>📞 Marco ‭340 3705754‬</p>
-                    <p>📞 Enrico ‭349 7114426‬</p>
+                    <p>📞 Marco ‭340 3705754‬  - Enrico ‭349 7114426</p>
                     <p>📩 rovarecup@gmail.com</p>
                   </b-card>
                 </div>

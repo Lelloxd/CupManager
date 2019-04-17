@@ -123,7 +123,7 @@ let router = new Router({
   },
   {
     path: '/',
-    redirect: '/calendario',
+    redirect: '/home',
   },
   {
     path: '/login',
