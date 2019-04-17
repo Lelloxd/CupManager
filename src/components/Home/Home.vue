@@ -56,7 +56,7 @@
                     bg-variant="light"
                   >
                     <b-card-text class="title-date">
-                      <span class="title">Ultimi posti disponibili!!!</span>
+                      <span class="title">Ultimi posti disponibili!</span>
                       <span class="date">15-04-19</span>
                     </b-card-text>
                     <p>Ancora pochi posti a disponibili per la Rovarè Cup 2019!!!</p>
@@ -77,7 +77,7 @@
                     bg-variant="light"
                   >
                     <b-card-text class="title-date">
-                      <span class="title">Iscrizioni aperte !!!</span>
+                      <span class="title">Iscrizioni aperte!!!</span>
                       <span class="date">15-03-19</span>
                     </b-card-text>
                     <p>Non è estate senza Rovarè Cup 😎</p>
