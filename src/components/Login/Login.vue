@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2>Login Page</h2>
-    <form @submit="handleSubmit">
+    <form @submit.prevent="handleSubmit">
       <div>
           <input placeholder="Your email" type="email" v-model="username">
       </div>
