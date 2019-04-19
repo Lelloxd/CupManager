@@ -1,13 +1,17 @@
 <template>
   <div class="app container-fluid" id="app">
     <div class="row">
-      <navbar />
+      <navbar/>
     </div>
 
     <div class="app-content row">
       <div class="min-h-100 w-100">
         <router-view/>
       </div>
+    </div>
+
+    <div class="footer">
+      <p style="margin-top:8px">Rovare Cup 2019 </p>
     </div>
   </div>
 </template>
@@ -17,7 +21,7 @@ import moment from "moment";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
 
-import VueResource from 'vue-resource';
+import VueResource from "vue-resource";
 
 import Bests from "./components/Bests/Bests.vue";
 
@@ -27,8 +31,8 @@ import Capocannoniere from "./components/Capocannoniere/Capocannoniere.vue";
 import Cards from "./components/Cards/Cards.vue";
 import Contact from "./components/Contact/Contact.vue";
 
-import FinalPhase from "./components/FinalPhase/FinalPhase.vue"
-import FinalPhaseEuroCup from '@/components/FinalPhase/FinalPhaseEuroCup.vue';
+import FinalPhase from "./components/FinalPhase/FinalPhase.vue";
+import FinalPhaseEuroCup from "@/components/FinalPhase/FinalPhaseEuroCup.vue";
 
 import ModalGroupDetails from "./components/ModalGroupDetails/ModalGroupDetails.vue";
 import ModalGroupNew from "./components/ModalGroupNew/ModalGroupNew.vue";
@@ -54,7 +58,7 @@ import Team from "./components/Team/Team.vue";
 import ViewGroups from "./components/Groups/ViewGroups.vue";
 
 export default {
-  name: 'app',
+  name: "app",
 
   components: {
     Bests,
@@ -87,9 +91,10 @@ export default {
 
     Team,
 
-    ViewGroups,
+    ViewGroups
   }
 };
 </script>
 
 <style src="./app.scss" lang="scss"></style>
+<style src="./styles/component.scss" lang="scss"></style>
